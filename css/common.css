@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-width: 1200px;
+    font-family: Microsoft YaHei;
+}
+input,button,select,textarea {
+    outline: none;
+}
+ul,ol{
+    list-style: none;
+}
+a{
+    text-decoration:none;
+}
+.clearfix:after {
+    display: table;
+    content: " ";
+    clear: both;
+}
+.clearfix{
+    *zoom: 1;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    font-weight: 100;
+}
+h1{ font-size: 60px;  }
+h2{ font-size: 30px;  }
+h3{ font-size: 28px;  }
+h4{ font-size: 18px;  }
+h5{ font-size: 16px;  }
+h6{ font-size: 14px;  }
+
+p{ font-size: 12px;  }
+
+a{
+    cursor: pointer;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.main-content{
+    width: 1200px;
+    margin: 0 auto;
+}
+.ml10{
+    margin-left: 10px;
+}
+.ml20{
+    margin-left: 20px;
+}
+
+.mr10{
+    margin-right: 10px;
+}
+.mr20{
+    margin-right: 20px;
+}
+
+
+
