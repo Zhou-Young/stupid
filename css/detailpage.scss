@@ -1,0 +1,162 @@
+.show-pic{
+  width: 100%;
+  padding-top: 68px;
+  padding-bottom: 30px;
+  background-image:linear-gradient(to bottom ,rgba(0,0,0,0.5),rgba(0,0,0,0.3));
+
+  .pic{
+    width: 450px;
+    margin: 30px auto;
+    border-radius: 1px;
+    background-color: #ffffff;
+    .nav{
+      height: 60px;
+      .collect{
+        display: inline-block;
+        color: #fff;
+        vertical-align: middle;
+        background-color: #f46;
+        border-radius: 2px;
+        margin: 15px 0 15px 15px;
+        height: 30px;
+        line-height: 32px;
+        padding: 0 10px;
+        i{
+          margin-right: 5px;
+        }
+      }
+      .trans{
+        width: 40px;
+        height: 30px;
+        line-height: 28px;
+        text-align: center;
+        border-radius: 2px;
+        background-color: #fff;
+        margin: 15px 15px 15px 0;
+        border: 1px solid #D6D6D6;
+      }
+    }
+    .bigpic{
+      padding: 20px;
+      img{
+        width: 408px;
+      }
+    }
+    .desc{
+      padding-left: 20px;
+      line-height: 30px;
+      padding-bottom: 20px;
+    }
+  }
+}
+
+.album{
+  margin: 40px auto 60px auto;
+  .album-detail{
+    width: 710px;
+    border: 1px solid #DEDFE0;
+    border-radius: 2px;
+    background: #fff;
+    .album-author{
+      .photo{
+        width: 36px;
+        height: 36px;
+        margin: 16px 12px;
+        background: url("../img/test-pic.png") no-repeat;
+        background-size: cover;
+        border-radius: 50%;
+      }
+      .content{
+        padding: 16px 0 30px 64px;
+        .album-all{
+          margin-top: 20px;
+          margin-right: 60px;
+          background-color: #e0e0e0;
+          .content-pic{
+            width: 100px;
+            height: 100px;
+            background: url("../img/test-pic.png") no-repeat;
+            background-size: cover;
+          }
+          .commit{
+            margin-left: 120px;
+            color: #333;
+            padding-top: 15px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+  .album-other{
+    padding: 20px 0 50px 64px;
+    border-top: dotted 1px #ededed;
+    .album-all{
+      margin-top: 20px;
+      margin-right: 60px;
+      background-color: #e0e0e0;
+      .content-pic{
+        width: 100px;
+        height: 100px;
+        background: url("../img/test-pic.png") no-repeat;
+        background-size: cover;
+      }
+      .commit{
+        margin-left: 120px;
+        color: #333;
+        padding-top: 15px;
+        line-height: 20px;
+      }
+    }
+  }
+  .user-commit{
+    width: 460px;
+    background-color: #FFF;
+    margin-left: 730px;
+    .com{
+      padding: 30px;
+      i{
+        padding: 5px;
+        border-right: solid 1px #ededed;
+        font-size: 18px;
+      }
+      input{
+        margin-left: 10px;
+        height: 25px;
+        width: 250px;
+        margin-top: 3px;
+      }
+      button{
+        display: inline-block;
+        width: 70px;
+        height: 25px;
+        background-color: #22b4f6;
+        border: none;
+        color: #fff;
+      }
+    }
+    .com-show{
+
+      .photo{
+        width: 36px;
+        height: 36px;
+        margin: 16px 12px;
+        background: url("../img/test-pic.png") no-repeat;
+        background-size: cover;
+        border-radius: 50%;
+      }
+      .content{
+        padding: 16px 0 30px 64px;
+        border-top: 1px dotted #ededed;
+        .album-all{
+          margin-top: 20px;
+          margin-right: 60px;
+          .commit{
+            color: #333;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+}

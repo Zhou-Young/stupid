@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="font/iconfont.css"/>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/detailpage.css"/>
+</head>
+<body>
+<nav>
+    <div class="main-content clearfix">
+        <a href="index.html" class="logo left"><img src="img/logo.png" alt="logo" /></a>
+        <div class="sort left">
+            <p>分类<i class="iconfont icon-unfold ml10"></i></p>
+            <ul class="sort-list list">
+                <li>宋民国</li>
+                <li>哈士奇</li>
+                <li>宋民国</li>
+                <li>哈士奇</li>
+            </ul>
+        </div>
+        <div class="search left">
+            <form action="">
+                <input type="text" class="search-input" id="searchValue"/>
+                <button type="button" class="search-button" onclick="search()">搜索</button>
+            </form>
+        </div>
+        <div class="add left">
+            <i class="iconfont icon-new left icon-add"></i>
+            <ul class="add-list list">
+                <li><a>上传图片</a></li>
+                <li><a>创建专辑</a></li>
+            </ul>
+        </div>
+        <div class="user right">
+            <a href="" class="message left mr20"><p>我的消息</p></a>
+            <img src="img/logo.png" alt="" class="left mr10 user-img"/>
+            <div class="left minemine">
+                <p class="mine">我的堆糖<i class="iconfont icon-unfold ml10"></i></p>
+                <ul class="mine-list list">
+                    <li><a href="">个人主页</a></li>
+                    <li><a>退出登陆</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+<section class="show-pic" id="showPic">
+    <div class="pic">
+        <div class="nav">
+            <p class="collect left"><i class="iconfont icon-shoucang1"></i>收藏 {{collect}}</p>
+            <i class="iconfont icon-download right trans"></i>
+        </div>
+        <div class="bigpic">
+            <img src="img/{{img}}" alt=""/>
+        </div>
+        <div>
+            <p class="desc">{{desc}}</p>
+        </div>
+    </div>
+</section>
+
+<section class="album clearfix main-content">
+    <div class="album-detail left">
+        <div class="album-author clearfix">
+            <div class="photo left"></div>
+            <div class="content">
+                <span>作者</span><span>2017-09-10</span>
+                <div class="album-all clearfix first">
+                    <div class="content-pic left"></div>
+                    <div class="commit">
+                        <p>壁纸</p>
+                        <p>2019个人收藏，222个人点赞</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="album-other">
+            <p>还被收藏在</p>
+            <div class="album-all clearfix">
+                <div class="content-pic left"></div>
+                <div class="commit">
+                    <p>壁纸</p>
+                    <p>2019个人收藏，222个人点赞</p>
+                </div>
+            </div>
+            <div class="album-all clearfix">
+                <div class="content-pic left"></div>
+                <div class="commit">
+                    <p>壁纸</p>
+                    <p>2019个人收藏，222个人点赞</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="user-commit">
+        <div class="com">
+            <i class="iconfont icon-dianzan left"></i>
+            <input type="text"/>
+            <button>评论</button>
+        </div>
+        <div class="com-show">
+            <div class="photo left"></div>
+            <div class="content">
+                <span>wo </span><span>2017-09-10</span>
+                <div class="album-all">
+                    <div class="commit">
+                        <p>2019个人收藏，222个人点赞</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+<footer>
+    <p>2017@周扬</p>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/detail.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+.show-pic {
+  width: 100%;
+  padding-top: 68px;
+  padding-bottom: 30px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)); }
+  .show-pic .pic {
+    width: 450px;
+    margin: 30px auto;
+    border-radius: 1px;
+    background-color: #ffffff; }
+    .show-pic .pic .nav {
+      height: 60px; }
+      .show-pic .pic .nav .collect {
+        display: inline-block;
+        color: #fff;
+        vertical-align: middle;
+        background-color: #f46;
+        border-radius: 2px;
+        margin: 15px 0 15px 15px;
+        height: 30px;
+        line-height: 32px;
+        padding: 0 10px; }
+        .show-pic .pic .nav .collect i {
+          margin-right: 5px; }
+      .show-pic .pic .nav .trans {
+        width: 40px;
+        height: 30px;
+        line-height: 28px;
+        text-align: center;
+        border-radius: 2px;
+        background-color: #fff;
+        margin: 15px 15px 15px 0;
+        border: 1px solid #D6D6D6; }
+    .show-pic .pic .bigpic {
+      padding: 20px; }
+      .show-pic .pic .bigpic img {
+        width: 408px; }
+    .show-pic .pic .desc {
+      padding-left: 20px;
+      line-height: 30px;
+      padding-bottom: 20px; }
+
+.album {
+  margin: 40px auto 60px auto; }
+  .album .album-detail {
+    width: 710px;
+    border: 1px solid #DEDFE0;
+    border-radius: 2px;
+    background: #fff; }
+    .album .album-detail .album-author .photo {
+      width: 36px;
+      height: 36px;
+      margin: 16px 12px;
+      background: url("../img/test-pic.png") no-repeat;
+      background-size: cover;
+      border-radius: 50%; }
+    .album .album-detail .album-author .content {
+      padding: 16px 0 30px 64px; }
+      .album .album-detail .album-author .content .album-all {
+        margin-top: 20px;
+        margin-right: 60px;
+        background-color: #e0e0e0; }
+        .album .album-detail .album-author .content .album-all .content-pic {
+          width: 100px;
+          height: 100px;
+          background: url("../img/test-pic.png") no-repeat;
+          background-size: cover; }
+        .album .album-detail .album-author .content .album-all .commit {
+          margin-left: 120px;
+          color: #333;
+          padding-top: 15px;
+          line-height: 20px; }
+  .album .album-other {
+    padding: 20px 0 50px 64px;
+    border-top: dotted 1px #ededed; }
+    .album .album-other .album-all {
+      margin-top: 20px;
+      margin-right: 60px;
+      background-color: #e0e0e0; }
+      .album .album-other .album-all .content-pic {
+        width: 100px;
+        height: 100px;
+        background: url("../img/test-pic.png") no-repeat;
+        background-size: cover; }
+      .album .album-other .album-all .commit {
+        margin-left: 120px;
+        color: #333;
+        padding-top: 15px;
+        line-height: 20px; }
+  .album .user-commit {
+    width: 460px;
+    background-color: #FFF;
+    margin-left: 730px; }
+    .album .user-commit .com {
+      padding: 30px; }
+      .album .user-commit .com i {
+        padding: 5px;
+        border-right: solid 1px #ededed;
+        font-size: 18px; }
+      .album .user-commit .com input {
+        margin-left: 10px;
+        height: 25px;
+        width: 250px;
+        margin-top: 3px; }
+      .album .user-commit .com button {
+        display: inline-block;
+        width: 70px;
+        height: 25px;
+        background-color: #22b4f6;
+        border: none;
+        color: #fff; }
+    .album .user-commit .com-show .photo {
+      width: 36px;
+      height: 36px;
+      margin: 16px 12px;
+      background: url("../img/test-pic.png") no-repeat;
+      background-size: cover;
+      border-radius: 50%; }
+    .album .user-commit .com-show .content {
+      padding: 16px 0 30px 64px;
+      border-top: 1px dotted #ededed; }
+      .album .user-commit .com-show .content .album-all {
+        margin-top: 20px;
+        margin-right: 60px; }
+        .album .user-commit .com-show .content .album-all .commit {
+          color: #333;
+          line-height: 20px; }
+
+/*# sourceMappingURL=detailpage.css.map */
