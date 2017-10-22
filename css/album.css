@@ -1,0 +1,96 @@
+.album-page {
+  margin-top: 90px; }
+  .album-page header {
+    height: 280px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
+    position: relative;
+    text-align: center;
+    color: #333333; }
+    .album-page header h1 {
+      font-size: 30px;
+      /* line-height: 120px; */
+      padding-top: 50px; }
+    .album-page header span {
+      line-height: 60px; }
+    .album-page header .desc {
+      position: absolute;
+      bottom: 0;
+      height: 60px;
+      text-align: center;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.3); }
+      .album-page header .desc .name {
+        padding-left: 20px;
+        line-height: 60px;
+        color: #ffffff; }
+        .album-page header .desc .name img {
+          width: 36px;
+          height: 36px;
+          margin-right: 20px;
+          border-radius: 50%;
+          vertical-align: middle; }
+      .album-page header .desc span {
+        display: inline-block;
+        color: #fff;
+        vertical-align: middle;
+        border-radius: 2px;
+        margin: 15px 0 15px 15px;
+        height: 30px;
+        line-height: 32px;
+        padding: 0 10px;
+        background-color: #ffffff; }
+        .album-page header .desc span i {
+          margin-right: 5px; }
+      .album-page header .desc .collect {
+        background-color: #f46; }
+      .album-page header .desc .praise {
+        background-color: #EAB346; }
+      .album-page header .desc .trans i {
+        color: #666666; }
+  .album-page .main {
+    margin-top: 30px; }
+    .album-page .main .pic-content {
+      position: relative; }
+      .album-page .main .pic-content .pic {
+        width: 224px;
+        margin: 0 20px 20px 0;
+        background-color: #ffffff;
+        border-width: 1px 1px 3px 1px;
+        border-style: solid;
+        border-color: #E3E4E5; }
+        .album-page .main .pic-content .pic:nth-child(5n) {
+          margin: 0 0 20px 0; }
+        .album-page .main .pic-content .pic img {
+          width: 222px;
+          display: block; }
+        .album-page .main .pic-content .pic .pic-introduce {
+          color: #666666;
+          padding: 0 10px; }
+          .album-page .main .pic-content .pic .pic-introduce .intro {
+            font-size: 12px;
+            line-height: 30px;
+            border-bottom: 1px solid #cccccc; }
+          .album-page .main .pic-content .pic .pic-introduce .pic-collect {
+            height: 35px;
+            padding-top: 10px;
+            font-size: 12px;
+            color: #999999; }
+    .album-page .main .page {
+      margin: 20px 0 40px 0;
+      text-align: center; }
+      .album-page .main .page li {
+        display: inline-block;
+        margin: 5px;
+        background-color: #ffffff;
+        border: solid 1px #eeeeee;
+        border-radius: 5px;
+        width: 50px;
+        height: 36px;
+        line-height: 36px; }
+        .album-page .main .page li:last-child {
+          width: 80px; }
+        .album-page .main .page li:hover {
+          background-color: #ff807d;
+          color: #ffffff; }
+
+/*# sourceMappingURL=album.css.map */

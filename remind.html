@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的消息</title>
+    <link rel="stylesheet" href="font/iconfont.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/updown.css" />
+    <style type="text/css">
+        /* CSS样式制作 */
+
+        body,
+        div,
+        ul,
+        li{
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+        }
+
+        #wrap {
+            /* width: 1024px; */
+            margin: 105px auto;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        #list-wrap {
+            width: 220px;
+            height: 185px;
+            padding: 25px 0;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            box-shadow: 0px 5px 10px -1px #ccc;
+        }
+
+        #list-wrap ul {
+            width: 200px;
+            height: 120px;
+            list-style: none;
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+        }
+
+        .js-selected {
+            border: 1px solid #aaa;
+            width: 60px;
+            height: 28px;
+            margin: 0 30px;
+            cursor: pointer;
+            list-style: none;
+            border: none;
+            line-height: 28px;
+        }
+
+        .select {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 10px;
+            border: 2px solid #ccc;
+            margin-right: 10px;
+            box-sizing: border-box;
+        }
+
+        .point {
+
+            width: 6px;
+            height: 6px;
+            border-radius: 6px;
+            background-color: #292929;
+            display: none;
+        }
+
+        li span {
+            font-size: 14px;
+            color: #333;
+        }
+
+        #detail-wrap {
+            width: 710px;
+            height: 450px;
+            border: 1px solid #ddd;
+            margin-left: 20px;
+            background-color: #fff;
+            box-shadow: 0px 5px 10px -1px #ccc;
+        }
+
+        .on {
+            display: block;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        #detail-wrap .one-item {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            height: 65px;
+            border-bottom: 1px solid #eee;
+        }
+
+        #detail-wrap .item-l {
+            margin: 0 15px 0 25px;
+        }
+
+        #detail-wrap .item-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        #detail-wrap .item-r {
+            line-height: 2
+        }
+
+        #detail-wrap .item-user {
+            color: #666;
+            font-weight: bold;
+        }
+
+        #detail-wrap .item-content {
+            color: #888
+        }
+    </style>
+
+    <script type="text/javascript">
+        // JS实现选项卡切换
+        window.onload = function () {
+            var dWrap = document.getElementById("detail-wrap");
+            var li = document.getElementsByClassName("js-selected");
+            var div = dWrap.getElementsByTagName("section");
+            var selected = document.getElementsByClassName("point");
+
+            for (var i = 0; i < li.length; i++) { //获取所有i编号的元素
+                li[i].index = i; //定义一个index属性对li进行编号
+                li[i].onclick = function () { //再注册一个点击事件，当点击的时候所有标签都恢复最初状态
+                    for (var n = 0; n < li.length; n++) { //这步是相对于未被点击部分的样式
+
+                        selected[n].className = "point";
+                        div[n].className = "hide";
+                    }
+                    selected[this.index].className = selected[this.index].className + " on"; //再对点击事件添加相应的属性
+                    div[this.index].className = ""; //通过之前的index编号绑定的指定div
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+<nav>
+    <div class="main-content clearfix">
+        <a href="index.html" class="logo left"><img src="img/logo.png" alt="logo" /></a>
+        <div class="sort left">
+            <p>分类<i class="iconfont icon-unfold ml10"></i></p>
+            <ul class="sort-list list">
+                <li>宋民国</li>
+                <li>哈士奇</li>
+                <li>宋民国</li>
+                <li>哈士奇</li>
+            </ul>
+        </div>
+        <div class="search left">
+            <form action="">
+                <input type="text" class="search-input" id="searchValue"/>
+                <button type="button" class="search-button" onclick="search()">搜索</button>
+            </form>
+        </div>
+        <div class="add left">
+            <i class="iconfont icon-new left icon-add"></i>
+            <ul class="add-list list">
+                <li><a>上传图片</a></li>
+                <li><a>创建专辑</a></li>
+            </ul>
+        </div>
+        <div class="user right show" id="user">
+            <a href="remind.html" class="message left mr20"><p>我的消息</p></a>
+            <img src="img/pic.jpg" alt="" class="left mr10 user-img"/>
+            <div class="left minemine">
+                <p class="mine">我的堆糖<i class="iconfont icon-unfold ml10"></i></p>
+                <ul class="mine-list list">
+                    <li><a href="mine.html">个人主页</a></li>
+                    <li onclick="magic('user','user','land')"><a>退出登陆</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="land right hidden" id="land">
+            <button class="mr20" onclick="show('login')">登陆</button>
+            <button onclick="show('sign')">注册</button>
+        </div>
+    </div>
+</nav>
+
+<div class="login hidden" id="login">
+    <div class="content">
+        <div class="nav clearfix">
+            <p class="left">登陆</p>
+            <i class="iconfont icon-guanbi right" onclick="hide('login')"></i>
+        </div>
+        <div class="login-form">
+            <span>昵称:</span><input type="text"/><br/>
+            <span>密码:</span><input type="password"/><br/>
+            <button class="mr10 login-btn" onclick="magic('login','land','user')">登陆</button><button class="cancel" onclick="hide('login')">取消</button>
+        </div>
+        <div class="other">
+            <p>其他登陆方式</p>
+            <ul>
+                <li><i class="iconfont icon-youbianlan-weiboshouye"></i></li>
+                <li><i class="iconfont icon-youbianlan-QQshouye"></i></li>
+                <li><i class="iconfont icon-youbianlan-weixinshouye"></i></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="sign hidden" id="sign">
+    <div class="content">
+        <div class="nav clearfix">
+            <p class="left">登陆</p>
+            <i class="iconfont icon-guanbi right" onclick="hide('login')"></i>
+        </div>
+        <div action="" class="login-form">
+            <span>昵称:</span><input type="text"/><br/>
+            <span>邮箱:</span><input type="text"/><br/>
+            <span>密码:</span><input type="password"/><br/>
+            <button class="mr10 login-btn" onclick="magic('sign','land','user')">注册并登陆</button><button class="cancel" onclick="hide('login')">取消</button>
+        </div>
+    </div>
+</div>
+    <div id="wrap" class="main-content clearfix">
+        <div id="list-wrap">
+            <ul>
+                <li class="js-selected">
+                    <div class="select">
+                        <div class="point on"></div>
+                    </div>
+                    <span>全部</span>
+                </li>
+                <li class="js-selected">
+                    <div class="select">
+                        <div class="point"></div>
+                    </div>
+                    <span>收藏</span>
+                </li>
+                <li class="js-selected">
+                    <div class="select">
+                        <div class="point"></div>
+                    </div>
+                    <span>赞</span>
+                </li>
+                <li class="js-selected">
+                    <div class="select">
+                        <div class="point"></div>
+                    </div>
+                    <span>评论</span>
+                </li>
+            </ul>
+        </div>
+        <div id="detail-wrap">
+            <section>
+                <div class="one-item">
+                    <div class="item-l">
+                        <img src="img/tx.jpg" alt="logo" class="item-img" />
+                    </div>
+                    <div class="item-r">
+                        <div class="item-user">XXX</div>
+                        <div class="item-content">收藏 了你的表情包 苏格兰折耳猫</div>
+                    </div>
+                </div>
+                <div class="one-item">
+                    <div class="item-l">
+                        <img src="img/tx1.jpg" alt="logo" class="item-img" />
+                    </div>
+                    <div class="item-r">
+                        <div class="item-user">大漠孤狼</div>
+                        <div class="item-content">赞 了你的表情包 苏格兰折耳猫</div>
+                    </div>
+                </div>
+                <div class="one-item">
+                    <div class="item-l">
+                        <img src="img/tx2.jpg" alt="logo" class="item-img" />
+                    </div>
+                    <div class="item-r">
+                        <div class="item-user">指尖微凉</div>
+                        <div class="item-content">收藏 了你的表情包 苏格兰折耳猫</div>
+                    </div>
+                </div>
+                <div class="one-item">
+                    <div class="item-l">
+                        <img src="img/tx3.jpg" alt="logo" class="item-img" />
+                    </div>
+                    <div class="item-r">
+                        <div class="item-user">XXX</div>
+                        <div class="item-content">评论 了你的表情包 苏格兰折耳猫 的图片</div>
+                    </div>
+                </div>
+                <div class="one-item">
+                    <div class="item-l">
+                        <img src="img/tx2.jpg" alt="logo" class="item-img" />
+                    </div>
+                    <div class="item-r">
+                        <div class="item-user">大漠孤狼</div>
+                        <div class="item-content">评论 了你的表情包 苏格兰折耳猫 的图片</div>
+                    </div>
+                </div>
+                <div class="one-item">
+                    <div class="item-l">
+                        <img src="img/tx.jpg" alt="logo" class="item-img" />
+                    </div>
+                    <div class="item-r">
+                        <div class="item-user">指尖微凉</div>
+                        <div class="item-content">赞 了你的表情包 苏格兰折耳猫</div>
+                    </div>
+                </div>
+
+
+            </section>
+            <section class="hide">
+                <div class="one-item">
+                    <div class="item-l">
+                        <img src="img/tx3.jpg" alt="logo" class="item-img" />
+                    </div>
+                    <div class="item-r">
+                        <div class="item-user">XXX</div>
+                        <div class="item-content">收藏 了你的表情包 苏格兰折耳猫</div>
+                    </div>
+                </div>
+                <div class="one-item">
+                    <div class="item-l">
+                        <img src="img/tx1.jpg" alt="logo" class="item-img" />
+                    </div>
+                    <div class="item-r">
+                        <div class="item-user">指尖微凉</div>
+                        <div class="item-content">收藏 了你的表情包 苏格兰折耳猫</div>
+                    </div>
+                </div>
+            </section>
+            <section class="hide">
+                <div class="one-item">
+                    <div class="item-l">
+                        <img src="img/tx2.jpg" alt="logo" class="item-img" />
+                    </div>
+                    <div class="item-r">
+                        <div class="item-user">大漠孤狼</div>
+                        <div class="item-content">赞 了你的表情包 苏格兰折耳猫</div>
+                    </div>
+                </div>
+                <div class="one-item">
+                    <div class="item-l">
+                        <img src="img/tx.jpg" alt="logo" class="item-img" />
+                    </div>
+                    <div class="item-r">
+                        <div class="item-user">指尖微凉</div>
+                        <div class="item-content">赞 了你的表情包 苏格兰折耳猫</div>
+                    </div>
+                </div>
+            </section>
+            <section class="hide">
+                <div class="one-item">
+                    <div class="item-l">
+                        <img src="img/tx2.jpg" alt="logo" class="item-img" />
+                    </div>
+                    <div class="item-r">
+                        <div class="item-user">XXX</div>
+                        <div class="item-content">评论 了你的表情包 苏格兰折耳猫 的图片</div>
+                    </div>
+                </div>
+                <div class="one-item">
+                    <div class="item-l">
+                        <img src="img/tx.jpg" alt="logo" class="item-img" />
+                    </div>
+                    <div class="item-r">
+                        <div class="item-user">大漠孤狼</div>
+                        <div class="item-content">评论 了你的表情包 苏格兰折耳猫 的图片</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <p>2017@周扬,徐佩，王玉芳，胡都</p>
+    </footer>
+</body>
+
+</html>

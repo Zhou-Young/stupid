@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="font/iconfont.css"/>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/mine.css"/>
+</head>
+<body>
+<nav>
+    <div class="main-content clearfix">
+        <a href="index.html" class="logo left"><img src="img/logo.png" alt="logo" /></a>
+        <div class="sort left">
+            <p>分类<i class="iconfont icon-unfold ml10"></i></p>
+            <ul class="sort-list list">
+                <li>宋民国</li>
+                <li>哈士奇</li>
+                <li>宋民国</li>
+                <li>哈士奇</li>
+            </ul>
+        </div>
+        <div class="search left">
+            <form action="">
+                <input type="text" class="search-input" id="searchValue"/>
+                <button type="button" class="search-button" onclick="search()">搜索</button>
+            </form>
+        </div>
+        <div class="add left">
+            <i class="iconfont icon-new left icon-add"></i>
+            <ul class="add-list list">
+                <li><a>上传图片</a></li>
+                <li><a>创建专辑</a></li>
+            </ul>
+        </div>
+        <div class="user right show" id="user">
+            <a href="remind.html" class="message left mr20"><p>我的消息</p></a>
+            <img src="img/pic.jpg" alt="" class="left mr10 user-img"/>
+            <div class="left minemine">
+                <p class="mine">我的堆糖<i class="iconfont icon-unfold ml10"></i></p>
+                <ul class="mine-list list">
+                    <li><a href="mine.html">个人主页</a></li>
+                    <li onclick="magic('user','user','land')"><a>退出登陆</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="land right hidden" id="land">
+            <button class="mr20" onclick="show('login')">登陆</button>
+            <button onclick="show('sign')">注册</button>
+        </div>
+    </div>
+</nav>
+
+<div class="login hidden" id="login">
+    <div class="content">
+        <div class="nav clearfix">
+            <p class="left">登陆</p>
+            <i class="iconfont icon-guanbi right" onclick="hide('login')"></i>
+        </div>
+        <div class="login-form">
+            <span>昵称:</span><input type="text"/><br/>
+            <span>密码:</span><input type="password"/><br/>
+            <button class="mr10 login-btn" onclick="magic('login','land','user')">登陆</button><button class="cancel" onclick="hide('login')">取消</button>
+        </div>
+        <div class="other">
+            <p>其他登陆方式</p>
+            <ul>
+                <li><i class="iconfont icon-youbianlan-weiboshouye"></i></li>
+                <li><i class="iconfont icon-youbianlan-QQshouye"></i></li>
+                <li><i class="iconfont icon-youbianlan-weixinshouye"></i></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="sign hidden" id="sign">
+    <div class="content">
+        <div class="nav clearfix">
+            <p class="left">登陆</p>
+            <i class="iconfont icon-guanbi right" onclick="hide('login')"></i>
+        </div>
+        <div action="" class="login-form">
+            <span>昵称:</span><input type="text"/><br/>
+            <span>邮箱:</span><input type="text"/><br/>
+            <span>密码:</span><input type="password"/><br/>
+            <button class="mr10 login-btn" onclick="magic('sign','land','user')">注册并登陆</button><button class="cancel" onclick="hide('login')">取消</button>
+        </div>
+    </div>
+</div>
+
+<section class="mine-page main-content">
+    <header>
+        <div class="header-left left">
+            <img src="img/pic.jpg" alt=""/>
+            <p class="name">饭饭特稀</p>
+            <span>关注 0</span> <span>粉丝 0</span><br/>
+            <a class="edit"><i class="iconfont icon-shezhi mr10"></i>编辑</a>
+        </div>
+        <div class="header-right">
+            
+        </div>
+        <div class="header-bottom">
+            <ul>
+                <li class="now" onclick="magic('collect','collect','picContent')">我的专辑</li>
+                <li onclick="magic('picContent','picContent','collect')">我的收藏</li>
+                <div class="line"></div>
+            </ul>
+        </div>
+
+    </header>
+
+    <section class="main">
+
+        <div class="pic-content main-content clearfix show" id="picContent" style="height: auto">
+            <div class="pic left add" id="album_1">
+                <i class="iconfont icon-tianjia"></i>
+                <p>创建专辑</p>
+            </div>
+            <div class="pic left " id="album_2">
+                <a href="album.html">
+                    <img src="img/2%20栀子花开.jpg" alt="" onclick=""/>
+                </a>
+                <div class="pic-introduce">
+                    <p class="intro">专辑名称</p>
+                    <div class="pic-collect">
+                        <i class="iconfont icon-shoucang1"></i><span>6张图片</span>
+                        <i class="iconfont icon-dianzan" onclick=""></i><span>22人收藏</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pic left " id="album_3">
+                <a href="album.html">
+                    <img src="img/3%20小时代4.jpg" alt="" onclick=""/>
+                </a>
+                <div class="pic-introduce">
+                    <p class="intro">专辑名称</p>
+                    <div class="pic-collect">
+                        <i class="iconfont icon-shoucang1"></i><span>6张图片</span>
+                        <i class="iconfont icon-dianzan" onclick=""></i><span>22人收藏</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pic left " id="album_4">
+                <a href="album.html">
+                    <img src="img/4%20中国合伙人.jpg" alt="" onclick=""/>
+                </a>
+                <div class="pic-introduce">
+                    <p class="intro">专辑名称</p>
+                    <div class="pic-collect">
+                        <i class="iconfont icon-shoucang1"></i><span>6张图片</span>
+                        <i class="iconfont icon-dianzan" onclick=""></i><span>22人收藏</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="collect clearfix hidden" id="collect">
+            <div class="pic left ">
+                <a href="album.html">
+                    <img src="img/2%20栀子花开.jpg" alt="" onclick=""/>
+                </a>
+                <div class="pic-introduce">
+                    <p class="intro">收藏专辑</p>
+                    <div class="pic-collect">
+                        <i class="iconfont icon-shoucang1"></i><span>6张图片</span>
+                        <i class="iconfont icon-dianzan" onclick=""></i><span>22人收藏</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pic left ">
+                <a href="album.html">
+                    <img src="img/3%20小时代4.jpg" alt="" onclick=""/>
+                </a>
+                <div class="pic-introduce">
+                    <p class="intro">收藏专辑</p>
+                    <div class="pic-collect">
+                        <i class="iconfont icon-shoucang1"></i><span>6张图片</span>
+                        <i class="iconfont icon-dianzan" onclick=""></i><span>22人收藏</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pic left ">
+                <a href="album.html">
+                    <img src="img/4%20中国合伙人.jpg" alt="" onclick=""/>
+                </a>
+                <div class="pic-introduce">
+                    <p class="intro">收藏专辑</p>
+                    <div class="pic-collect">
+                        <i class="iconfont icon-shoucang1"></i><span>6张图片</span>
+                        <i class="iconfont icon-dianzan" onclick=""></i><span>22人收藏</span>
+                    </div>
+                </div>
+            </div><div class="pic left ">
+            <a href="album.html">
+                <img src="img/2%20栀子花开.jpg" alt="" onclick=""/>
+            </a>
+            <div class="pic-introduce">
+                <p class="intro">收藏专辑</p>
+                <div class="pic-collect">
+                    <i class="iconfont icon-shoucang1"></i><span>6张图片</span>
+                    <i class="iconfont icon-dianzan" onclick=""></i><span>22人收藏</span>
+                </div>
+            </div>
+        </div>
+            <div class="pic left ">
+                <a href="album.html">
+                    <img src="img/3%20小时代4.jpg" alt="" onclick=""/>
+                </a>
+                <div class="pic-introduce">
+                    <p class="intro">收藏专辑</p>
+                    <div class="pic-collect">
+                        <i class="iconfont icon-shoucang1"></i><span>6张图片</span>
+                        <i class="iconfont icon-dianzan" onclick=""></i><span>22人收藏</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pic left ">
+                <a href="album.html">
+                    <img src="img/4%20中国合伙人.jpg" alt="" onclick=""/>
+                </a>
+                <div class="pic-introduce">
+                    <p class="intro">收藏专辑</p>
+                    <div class="pic-collect">
+                        <i class="iconfont icon-shoucang1"></i><span>6张图片</span>
+                        <i class="iconfont icon-dianzan" onclick=""></i><span>22人收藏</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pic left ">
+                <a href="album.html">
+                    <img src="img/2%20栀子花开.jpg" alt="" onclick=""/>
+                </a>
+                <div class="pic-introduce">
+                    <p class="intro">专辑名称</p>
+                    <div class="pic-collect">
+                        <i class="iconfont icon-shoucang1"></i><span>6张图片</span>
+                        <i class="iconfont icon-dianzan" onclick=""></i><span>22人收藏</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pic left ">
+                <a href="album.html">
+                    <img src="img/3%20小时代4.jpg" alt="" onclick=""/>
+                </a>
+                <div class="pic-introduce">
+                    <p class="intro">收藏专辑</p>
+                    <div class="pic-collect">
+                        <i class="iconfont icon-shoucang1"></i><span>6张图片</span>
+                        <i class="iconfont icon-dianzan" onclick=""></i><span>22人收藏</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pic left ">
+                <a href="album.html">
+                    <img src="img/4%20中国合伙人.jpg" alt="" onclick=""/>
+                </a>
+                <div class="pic-introduce">
+                    <p class="intro">收藏专辑</p>
+                    <div class="pic-collect">
+                        <i class="iconfont icon-shoucang1"></i><span>6张图片</span>
+                        <i class="iconfont icon-dianzan" onclick=""></i><span>22人收藏</span>
+                    </div>
+                </div>
+            </div>
+        </ul>
+    </section>
+
+</section>
+
+<footer>
+    <p>2017@周扬,徐佩，王玉芳，胡都</p>
+</footer>
+<script src="js/data.js"></script>
+<script src="js/common.js"></script>
+<script>
+    var picHtml=g('#picContent').innerHTML;
+
+    //显示图片列表
+    function putPic(data){
+        var mainhtml=[];
+        for(var i=0;i<data.length;i++){
+            var _html=picHtml
+                    .replace(/{{index}}/g,i)
+                    .replace('{{img}}',data[i].img+'.jpg')
+                    .replace('{{desc}}',data[i].desc)
+                    .replace('{{collect}}',data[i].collect)
+                    .replace('{{praise}}',data[i].praise);
+            mainhtml.push(_html);
+        }
+        g('#picContent').innerHTML= mainhtml.join(' ');
+        console.log(g('#picContent').innerHTML);
+        window.onload=function(){
+            waterFall('#picContent','pic');
+        }
+
+    }
+//    putPic(data);
+
+
+    //实现瀑布流布局
+    //规则:从第二行开始的图片,总是拼接在上一行高度最矮的图片后面
+    function  waterFall(parent,box) {
+        //父盒子居中
+        //通过父盒子拿到所有的子盒子
+        var allBox = g(parent).getElementsByClassName(box);
+
+        var boxWidth = 224;
+        var cols = 5;
+
+        //子盒子定位
+        //创建一个高度数组,存所有的高度
+        var heightArr = [];
+        var maxHeight;
+        //遍历
+        for(var i = 0; i < allBox.length ;i++)
+        {
+            //求出每个盒子的高度
+            var boxHeight = allBox[i].offsetHeight + 20;
+            console.log(boxHeight);
+            //第一行的盒子不需要重新定位//每一行的盒子数与列数相同
+            if(i<cols)
+            {
+                //添加第一行所有盒子高度
+                heightArr.push(boxHeight);
+            }
+            else//剩下的盒子都需要瀑布流布局
+            {
+                //求出最矮的盒子高度
+                var minBoxHeight = Math.min.apply(this,heightArr);
+                //求出最矮盒子对应的索引
+                var minBoxIndex = getMinBoxIndex(minBoxHeight,heightArr);
+                //盒子瀑布流定位  顶部间距就是最矮盒子的高度
+                allBox[i].style.position = 'absolute';
+                allBox[i].style.top = minBoxHeight +  'px';
+                allBox[i].style.left = minBoxIndex * (boxWidth + 20) +'px';
+                //关键:更新数组最矮高度,使下一个图片在高度数组中总是找最矮高度的图片下面拼接
+                heightArr[minBoxIndex] += boxHeight;
+
+            }
+        }
+        maxHeight=Math.max.apply(this,heightArr);
+        g(parent).style.height=maxHeight + "px";
+    }
+
+    //求出最矮盒子对应的索引函数
+    function getMinBoxIndex(val,arr) {
+        for(var i in arr)
+        {
+            if(val == arr[i])
+            {
+                return i;
+            }
+        }
+    }
+    function show(classN){
+        var _classN = g("#"+classN).className.split(' ');
+        _classN[_classN.length-1] = 'show';
+        g("#"+classN).className = _classN.join(' ');
+    }
+
+    function hide(classN){
+        var _classN = g("#"+classN).className.split(' ');
+        _classN[_classN.length-1] = 'hidden';
+        g("#"+classN).className = _classN.join(' ');
+    }
+
+    function magic(hide1,hide2,mshow){
+        hide(hide1);
+        hide(hide2);
+        show(mshow);
+    }
+
+</script>
+</body>
+</html>

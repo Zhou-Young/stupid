@@ -51,11 +51,15 @@
       width: 36px;
       height: 36px;
       margin: 16px 12px;
-      background: url("../img/test-pic.png") no-repeat;
+      background: url("../img/tx2.jpg") no-repeat;
       background-size: cover;
       border-radius: 50%; }
     .album .album-detail .album-author .content {
       padding: 16px 0 30px 64px; }
+      .album .album-detail .album-author .content span:nth-child(2) {
+        font-size: 12px;
+        padding-left: 10px;
+        color: #ccc; }
       .album .album-detail .album-author .content .album-all {
         margin-top: 20px;
         margin-right: 60px;
@@ -113,12 +117,16 @@
       width: 36px;
       height: 36px;
       margin: 16px 12px;
-      background: url("../img/test-pic.png") no-repeat;
+      background: url("../img/pic.jpg") no-repeat;
       background-size: cover;
       border-radius: 50%; }
     .album .user-commit .com-show .content {
       padding: 16px 0 30px 64px;
       border-top: 1px dotted #ededed; }
+      .album .user-commit .com-show .content span:nth-child(2) {
+        font-size: 12px;
+        padding-left: 10px;
+        color: #ccc; }
       .album .user-commit .com-show .content .album-all {
         margin-top: 20px;
         margin-right: 60px; }

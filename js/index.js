@@ -49,13 +49,15 @@ function putPic(data ,currentPage,pageNum){
         mainhtml.push(_html);
     }
     g('#picContent').innerHTML= mainhtml.join(' ');
-    console.log(g('#picContent').innerHTML);
-    window.onload=function(){
+    //window.onload=function(){
         waterFall('#picContent','pic');
-    }
+    //}
 
 }
-putPic(data,currentPage,pageNum);
+window.onload=function(){
+    putPic(data,currentPage,pageNum);
+
+};
 
 
 //实现翻页
@@ -95,9 +97,7 @@ function checkPage(n) {
 function sortC(){
     data.sort(function(a,b){
         return a.collect-b.collect});
-    console.log(data);
     putPic(data,currentPage,pageNum);
-    console.log("done");
 }
 
 //按点赞数排序
@@ -115,7 +115,6 @@ function search(){
     for(i in data){
         if(data[i].desc.indexOf(inputValue) > -1){
             searchData.push(data[i]);
-            console.log(searchData);
         }
     }
     putPic(searchData,currentPage,pageNum);
@@ -140,7 +139,6 @@ function  waterFall(parent,box) {
     {
         //求出每个盒子的高度
         var boxHeight = allBox[i].offsetHeight + 20;
-        console.log(boxHeight);
         //第一行的盒子不需要重新定位//每一行的盒子数与列数相同
         if(i<cols)
         {
@@ -164,6 +162,7 @@ function  waterFall(parent,box) {
     }
     maxHeight=Math.max.apply(this,heightArr);
     g(parent).style.height=maxHeight + "px";
+    console.log("waterfall");
 }
 
 //求出最矮盒子对应的索引函数
@@ -178,9 +177,6 @@ function getMinBoxIndex(val,arr) {
 }
 
 
-var loginHtml = g("#login");
-console.log(loginHtml);
-var showState = 0;
 
 function show(classN){
     var _classN = g("#"+classN).className.split(' ');

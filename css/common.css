@@ -108,9 +108,9 @@ nav {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   z-index: 9999999; }
   nav .logo {
-    width: 80px;
-    height: 36px;
-    margin: 13px 0 0 0; }
+    width: 110px;
+    height: 45px;
+    margin: 7px 0 0 0; }
     nav .logo img {
       width: 100%;
       height: 100%; }
@@ -272,7 +272,8 @@ nav {
       .login .content .login-form input, .sign .content .login-form input {
         width: 250px;
         height: 30px;
-        margin-bottom: 20px; }
+        margin-bottom: 20px;
+        padding-left: 10px; }
       .login .content .login-form button, .sign .content .login-form button {
         display: inline-block;
         width: 70px;
@@ -287,6 +288,14 @@ nav {
     .login .content .other, .sign .content .other {
       text-align: center;
       color: #666666; }
+      .login .content .other ul, .sign .content .other ul {
+        text-align: center; }
+        .login .content .other ul li, .sign .content .other ul li {
+          display: inline-block;
+          margin: 10px;
+          color: #999; }
+          .login .content .other ul li:hover, .sign .content .other ul li:hover {
+            color: #666; }
 
 .sign .content {
   width: 450px;

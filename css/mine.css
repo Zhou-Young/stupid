@@ -1,0 +1,116 @@
+.mine-page {
+  margin-top: 90px; }
+  .mine-page header {
+    height: 340px;
+    position: relative;
+    color: #333333;
+    background: url("../img/bg.jpg");
+    background-size: cover; }
+    .mine-page header .header-left {
+      width: 500px;
+      height: 280px;
+      background: rgba(0, 0, 0, 0.3);
+      color: #ffffff;
+      text-align: center; }
+      .mine-page header .header-left img {
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+        margin-top: 40px; }
+      .mine-page header .header-left .name {
+        font-size: 14px;
+        line-height: 40px; }
+      .mine-page header .header-left .edit {
+        width: 70px;
+        height: 30px;
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.5);
+        color: #eeeeee;
+        border-radius: 3px;
+        font-size: 13px;
+        margin-top: 20px;
+        line-height: 30px; }
+    .mine-page header .header-bottom {
+      position: absolute;
+      bottom: 0;
+      height: 60px;
+      background: #ffffff;
+      width: 100%; }
+      .mine-page header .header-bottom ul {
+        text-align: center; }
+        .mine-page header .header-bottom ul li {
+          display: inline-block;
+          line-height: 60px;
+          width: 100px;
+          transition: .6s all ease; }
+          .mine-page header .header-bottom ul li:nth-child(2):hover ~ .line {
+            left: 600px; }
+        .mine-page header .header-bottom ul .line {
+          transition: .5s all ease;
+          position: absolute;
+          height: 3px;
+          width: 100px;
+          background-color: #cccccc;
+          bottom: 0;
+          left: 500px; }
+  .mine-page .main {
+    margin-top: 40px; }
+    .mine-page .main .pic-content, .mine-page .main .collect {
+      position: relative;
+      margin: 20px 0 40px; }
+      .mine-page .main .pic-content .add, .mine-page .main .collect .add {
+        text-align: center;
+        padding-top: 95px;
+        color: #666;
+        background: #f9f9f9 !important; }
+        .mine-page .main .pic-content .add i, .mine-page .main .collect .add i {
+          font-size: 60px; }
+        .mine-page .main .pic-content .add p, .mine-page .main .collect .add p {
+          line-height: 50px; }
+        .mine-page .main .pic-content .add:hover, .mine-page .main .collect .add:hover {
+          background: #ededed !important; }
+      .mine-page .main .pic-content .pic, .mine-page .main .collect .pic {
+        width: 224px;
+        height: 313px;
+        margin: 0 20px 20px 0;
+        background-color: #ffffff;
+        border-width: 1px 1px 3px 1px;
+        border-style: solid;
+        border-color: #E3E4E5; }
+        .mine-page .main .pic-content .pic:nth-child(5n), .mine-page .main .collect .pic:nth-child(5n) {
+          margin: 0 0 20px 0; }
+        .mine-page .main .pic-content .pic img, .mine-page .main .collect .pic img {
+          width: 222px;
+          height: 222px;
+          display: block; }
+        .mine-page .main .pic-content .pic .pic-introduce, .mine-page .main .collect .pic .pic-introduce {
+          color: #666666;
+          padding: 0 10px; }
+          .mine-page .main .pic-content .pic .pic-introduce .intro, .mine-page .main .collect .pic .pic-introduce .intro {
+            font-size: 12px;
+            line-height: 30px;
+            border-bottom: 1px solid #cccccc; }
+          .mine-page .main .pic-content .pic .pic-introduce .pic-collect, .mine-page .main .collect .pic .pic-introduce .pic-collect {
+            height: 35px;
+            padding-top: 10px;
+            font-size: 12px;
+            color: #999999; }
+    .mine-page .main .page {
+      margin: 20px 0 40px 0;
+      text-align: center; }
+      .mine-page .main .page li {
+        display: inline-block;
+        margin: 5px;
+        background-color: #ffffff;
+        border: solid 1px #eeeeee;
+        border-radius: 5px;
+        width: 50px;
+        height: 36px;
+        line-height: 36px; }
+        .mine-page .main .page li:last-child {
+          width: 80px; }
+        .mine-page .main .page li:hover {
+          background-color: #ff807d;
+          color: #ffffff; }
+
+/*# sourceMappingURL=mine.css.map */
