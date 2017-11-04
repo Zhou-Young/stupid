@@ -301,6 +301,107 @@ nav {
   width: 450px;
   height: 300px; }
 
+/* upload picture start*/
+.upload-box {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 200px;
+  margin: 30px auto;
+  border: 4px dashed #ccc; }
+
+.upload-btn {
+  position: relative;
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 4px;
+  background-color: #22b4f6; }
+
+.upload-btn i, .upload-btn span {
+  color: #fff; }
+
+.upload-btn input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer; }
+
+.upload-tip {
+  margin-top: 18px;
+  font-size: 14px;
+  color: #aaa; }
+
+/* upload picture end*/
+/* upload album start*/
+.album-wrap {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center; }
+
+.album-l {
+  width: 280px;
+  height: 210px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center; }
+
+.album-l p {
+  margin-bottom: 10px; }
+
+.album-l span {
+  display: inline-block;
+  width: 45px;
+  font-size: 14px;
+  text-align: right;
+  margin-right: 8px; }
+
+.album-l input {
+  display: inline-block;
+  height: 25px;
+  width: 130px; }
+
+.album-l textarea {
+  width: 130px; }
+
+.album-l .create {
+  width: 65px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #22b4f6;
+  margin-left: -55px;
+  font-size: 15px;
+  cursor: pointer; }
+
+.album-r {
+  align-self: flex-start;
+  width: 280px;
+  margin: 25px 0;
+  text-align: left; }
+
+.album-r h5 {
+  color: #666; }
+
+.album-r label {
+  display: inline-block;
+  padding: 4px;
+  margin-top: 6px;
+  border: 1px solid #22b4f6;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #22b4f6;
+  cursor: pointer; }
+
+/* upload album end*/
 footer {
   height: 70px;
   background-color: #e1e2e3;
