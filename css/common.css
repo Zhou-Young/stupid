@@ -81,7 +81,7 @@ p {
   display: block; }
 
 .hidden {
-  display: none; }
+  display: none !important; }
 
 .list {
   display: none;
@@ -402,6 +402,39 @@ nav {
   cursor: pointer; }
 
 /* upload album end*/
+.upload-show .show-img {
+  background-color: #ccc;
+  width: 150px;
+  height: 200px;
+  margin: 30px; }
+  .upload-show .show-img #imgShow {
+    width: 150px;
+    height: 200px; }
+.upload-show .show-desc {
+  margin-left: 200px;
+  padding-top: 30px; }
+  .upload-show .show-desc p {
+    text-align: left;
+    margin-bottom: 10px; }
+    .upload-show .show-desc p span {
+      width: 40px;
+      display: inline-block;
+      text-align: right;
+      vertical-align: top;
+      margin-right: 10px;
+      margin-bottom: 10px; }
+    .upload-show .show-desc p input {
+      width: 150px;
+      height: 25px; }
+    .upload-show .show-desc p textarea {
+      width: 150px;
+      border: #ccc 1px solid; }
+  .upload-show .show-desc .upload-btn {
+    display: block;
+    margin-left: 70px;
+    margin-top: 45px;
+    width: 100px; }
+
 footer {
   height: 70px;
   background-color: #e1e2e3;

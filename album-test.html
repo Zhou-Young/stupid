@@ -5,7 +5,7 @@
     <title></title>
     <link rel="stylesheet" href="font/iconfont.css"/>
     <link rel="stylesheet" href="css/common.css"/>
-    <link rel="stylesheet" href="css/detailpage.css"/>
+    <link rel="stylesheet" href="css/album.css"/>
 </head>
 <body>
 <nav>
@@ -158,86 +158,131 @@
     </div>
 </div>
 
-<section class="show-pic" id="showPic">
-    <div class="pic">
-        <div class="nav">
-            <p class="collect left"><i class="iconfont icon-shoucang1"></i>收藏 {{collect}}</p>
-            <i class="iconfont icon-demo16 right trans"></i>
-        </div>
-        <div class="bigpic">
-            <img src="img/{{img}}" alt=""/>
-        </div>
-        <div>
-            <p class="desc">{{desc}}</p>
-        </div>
-    </div>
-    <a href="detailpage.html?id={{indexl}}" class="ileft"><i class="iconfont icon-back "></i></a>
-    <a href="detailpage.html?id={{indexr}}" class="iright"><i class="iconfont icon-right "></i></a>
-</section>
+<section class="album-page main-content">
+    <header>
+        <h1>
+            专辑名称
+        </h1>
+        <span>1张图片</span><span>0人收藏</span>
+        <div class="desc">
+            <p class="name left"><img src="img/tx.jpg" alt=""/>饭饭特稀</p>
+            <span class="bp collect"><i class="iconfont icon-shoucang1"></i>收藏 0</span>
+            <span class="bp praise"><i class="iconfont icon-dianzan"></i>点赞 0</span>
+            <span class="bp trans"><i class="iconfont icon-sousuo"></i></span>
 
-<section class="album clearfix main-content">
-    <div class="album-detail left">
-        <div class="album-author clearfix">
-            <div class="photo left"></div>
-            <div class="content">
-                <span>wuli大萌佩</span><span>2017-09-10</span>
-                <div class="album-all clearfix first">
-                    <a href="album.html">
-                        <div class="content-pic left"></div>
-                        <div class="commit">
-                            <p>影视</p>
-                            <p>2019个人收藏，222个人点赞</p>
-                        </div>
-                    </a>
+
+        </div>
+    </header>
+
+    <section class="main">
+        <div class="pic-content main-content clearfix" id="picContent" style="height: auto">
+            <div class="pic left " id="pic_{{index}}">
+                <a href="detailpage.html?id={{index}}">
+                    <img src="img/{{img}}" alt="" onclick="jump()"/>
+                </a>
+                <div class="pic-introduce">
+                    <p class="intro">{{desc}}</p>
+                    <div class="pic-collect">
+                        <i class="iconfont icon-shoucang1"></i><span>{{collect}}</span>
+                        <i class="iconfont icon-dianzan" onclick=""></i><span>{{praise}}</span>
+                    </div>
                 </div>
-
-            </div>
-
-        </div>
-        <div class="album-other">
-            <p>还被收藏在</p>
-            <div class="album-all clearfix">
-                <a href="album.html">
-                    <div class="content-pic left"></div>
-                    <div class="commit">
-                        <p>头像</p>
-                        <p>2019个人收藏，222个人点赞</p>
-                    </div>
-                </a>
-
-            </div>
-            <div class="album-all clearfix">
-                <a href="album.html">
-                    <div class="content-pic left"></div>
-                    <div class="commit">
-                        <p>壁纸</p>
-                        <p>2011个人收藏，22个人点赞</p>
-                    </div>
-                </a>
             </div>
         </div>
-    </div>
-    <div class="user-commit">
-        <div class="com">
-            <i class="iconfont icon-dianzan left"></i>
-            <input type="text" id="commit"/>
-            <button id="submitCommit" onclick="showCommit()">评论</button>
-        </div>
-        <div class="com-show" id="commitShow">
+        <ul class="page" id="page">
+        </ul>
+    </section>
 
-        </div>
-
-
-    </div>
 </section>
 
 <footer>
     <p>2017@周扬,徐佩，王玉芳，胡都</p>
 </footer>
-
-<script src="js/common.js"></script>
 <script src="js/data.js"></script>
-<script src="js/detail.js"></script>
+<script src="js/common.js"></script>
+<script>
 
+    var picHtml=g('#picContent').innerHTML;
+
+    //显示图片列表
+    function putPic(data){
+        var mainhtml=[];
+        for(var i=0;i<data.length;i++){
+            var _html=picHtml
+                    .replace(/{{index}}/g,i)
+                    .replace('{{img}}',data[i].img+'.jpg')
+                    .replace('{{desc}}',data[i].desc)
+                    .replace('{{collect}}',data[i].collect)
+                    .replace('{{praise}}',data[i].praise);
+            mainhtml.push(_html);
+        }
+        g('#picContent').innerHTML= mainhtml.join(' ');
+        console.log(g('#picContent').innerHTML);
+        window.onload=function(){
+            waterFall('#picContent','pic');
+        }
+
+    }
+    putPic(data);
+
+
+    //实现瀑布流布局
+    //规则:从第二行开始的图片,总是拼接在上一行高度最矮的图片后面
+    function  waterFall(parent,box) {
+        //父盒子居中
+        //通过父盒子拿到所有的子盒子
+        var allBox = g(parent).getElementsByClassName(box);
+
+        var boxWidth = 224;
+        var cols = 5;
+
+        //子盒子定位
+        //创建一个高度数组,存所有的高度
+        var heightArr = [];
+        var maxHeight;
+        //遍历
+        for(var i = 0; i < allBox.length ;i++)
+        {
+            //求出每个盒子的高度
+            var boxHeight = allBox[i].offsetHeight + 20;
+            console.log(boxHeight);
+            //第一行的盒子不需要重新定位//每一行的盒子数与列数相同
+            if(i<cols)
+            {
+                //添加第一行所有盒子高度
+                heightArr.push(boxHeight);
+            }
+            else//剩下的盒子都需要瀑布流布局
+            {
+                //求出最矮的盒子高度
+                var minBoxHeight = Math.min.apply(this,heightArr);
+                //求出最矮盒子对应的索引
+                var minBoxIndex = getMinBoxIndex(minBoxHeight,heightArr);
+                //盒子瀑布流定位  顶部间距就是最矮盒子的高度
+                allBox[i].style.position = 'absolute';
+                allBox[i].style.top = minBoxHeight +  'px';
+                allBox[i].style.left = minBoxIndex * (boxWidth + 20) +'px';
+                //关键:更新数组最矮高度,使下一个图片在高度数组中总是找最矮高度的图片下面拼接
+                heightArr[minBoxIndex] += boxHeight;
+
+            }
+        }
+        maxHeight=Math.max.apply(this,heightArr);
+        g(parent).style.height=maxHeight + "px";
+    }
+
+    //求出最矮盒子对应的索引函数
+    function getMinBoxIndex(val,arr) {
+        for(var i in arr)
+        {
+            if(val == arr[i])
+            {
+                return i;
+            }
+        }
+    }
+
+</script>
 </body>
 </html>
+

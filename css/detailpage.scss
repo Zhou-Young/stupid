@@ -3,7 +3,7 @@
   padding-top: 68px;
   padding-bottom: 30px;
   background-image:linear-gradient(to bottom ,rgba(0,0,0,0.5),rgba(0,0,0,0.3));
-
+  position: relative;
   .pic{
     width: 450px;
     margin: 30px auto;
@@ -46,6 +46,24 @@
       padding-left: 20px;
       line-height: 30px;
       padding-bottom: 20px;
+    }
+  }
+  .ileft{
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    color: #fff;
+    i{
+      font-size: 35px;
+    }
+  }
+  .iright{
+    position: absolute;
+    top: 50%;
+    right: 50px;
+    color: #fff;
+    i{
+      font-size: 35px;
     }
   }
 }

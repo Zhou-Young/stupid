@@ -25,7 +25,7 @@ function g(elem){
 
 var picHtml=g('#picContent').innerHTML;
 var currentPage = 0;
-var pageNum = 8;
+var pageNum = 20;
 var totalPage =Math.ceil(data.length/pageNum) ;
 var pageIner = g("#page").innerHTML;
 
@@ -90,13 +90,27 @@ function checkPage(n) {
     waterFall('#picContent','pic');
 }
 
+//按标签选择图片
+sortUl.addEventListener("click", function(e) {
+    currentPage = 0;
+    if (event.target.nodeName.toLowerCase() == "li") {
+        var searchData = [];
+        for(i in data){
+            if(data[i].label.indexOf(e.target.innerText) > -1){
+                searchData.push(data[i]);
+            }
+        }
+        putPic(searchData,currentPage,pageNum);
+    }
+});
+
 
 
 
 //按收藏数排序
 function sortC(){
     data.sort(function(a,b){
-        return a.collect-b.collect});
+        return b.collect-a.collect});
     putPic(data,currentPage,pageNum);
 }
 
@@ -111,14 +125,35 @@ function sortP(){
 function search(){
     var inputValue = g("#searchValue").value;
     var searchData = [];
-
+    currentPage = 0;
     for(i in data){
-        if(data[i].desc.indexOf(inputValue) > -1){
+        if(data[i].desc.indexOf(inputValue) > -1 || data[i].caption.indexOf(inputValue) > -1){
             searchData.push(data[i]);
         }
     }
     putPic(searchData,currentPage,pageNum);
 }
+
+//点赞
+var praiseState = 0 ;
+function praise(name){
+    console.log(name.childNodes,name.lastElementChild);
+    if(name.firstElementChild.style.color=="rgb(153, 153, 153)" ||name.firstElementChild.style.color== ""){
+        name.lastElementChild.innerText =parseInt(name.lastElementChild.innerText)+1;
+        if(name.firstElementChild.className=="iconfont icon-shoucang1"){
+            name.firstElementChild.style.color="#ff807d";
+        }else{
+            name.firstElementChild.style.color="#90ced9";
+
+        }
+
+    }else{
+        name.lastElementChild.innerText =parseInt(name.lastElementChild.innerText)-1;
+        name.firstElementChild.style.color="#999999";
+    }
+}
+
+
 
 //实现瀑布流布局
 //规则:从第二行开始的图片,总是拼接在上一行高度最矮的图片后面
@@ -195,6 +230,7 @@ function magic(hide1,hide2,mshow){
     hide(hide2);
     show(mshow);
 }
+
 
 
 

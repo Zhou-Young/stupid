@@ -40,3 +40,7 @@ function magic(hide1,hide2,mshow){
     hide(hide2);
     show(mshow);
 }
+
+window.onload=function(){
+
+}

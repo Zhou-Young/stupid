@@ -3,184 +3,46 @@
  */
 var data=[];
 //  \只是js中将字符串的写法换行，，实际显示效果还是连着的
-var dataStr = '1、超能陆战队<br>\
-<br>\
-我长成这样是为了让人看起来更想拥抱。<br>\
-<br>\
-12<br>\
-<br>\
-13<br>\
-<br>\
-<br>\
-2、栀子花开<br>\
-<br>\
-青春就是再近的距离，也要跑着去。<br>\
-<br>\
-112<br>\
-<br>\
-133<br>\
-<br>\
-<br>\
-3、小时代4<br>\
-<br>\
-时间一点一滴地过去，流逝告别。我们慢慢地走向一个被上帝作记号的地点。<br>\
-<br>\
-125<br>\
-<br>\
-153<br>\
-<br>\
-<br>\
-4、中国合伙人<br>\
-<br>\
-不要跟丈母娘打麻将，不要跟想法比你多的女人上床，不要跟最好的朋友合伙开公司。<br>\
-<br>\
-412<br>\
-<br>\
-133<br>\
-<br>\
-<br>\
-5、分手大师<br>\
-<br>\
-独行太久心会变坚硬，只有爱会让它松动。<br>\
-<br>\
-512<br>\
-<br>\
-137<br>\
-<br>\
-<br>\
-6、后会无期<br>\
-<br>\
-我们听过无数的道理，却仍旧过不好这一生。<br>\
-<br>\
-125<br>\
-<br>\
-153<br>\
-<br>\
-<br>\
-7、何以笙箫默<br>\
-<br>\
-如果世界上曾经有那个人出现过，其他人都会变成将就。而我不愿意将就。<br>\
-<br>\
-142<br>\
-<br>\
-135<br>\
-<br>\
-<br>\
-8、匆匆那年<br>\
-<br>\
-那时候，我们以为喜欢就是永远。后来才发现，我们只有曾经，没有永远。<br>\
-<br>\
-12<br>\
-<br>\
-143<br>\
-<br>\
-<br>\
-9、同桌的妳<br>\
-<br>\
-时间太长 我怕等不到你，距离太远 我怕追不上你，爱情太沉 我怕放不下你。<br>\
-<br>\
-12<br>\
-<br>\
-183<br>\
-<br>\
-<br>\
-10、灰姑娘<br>\
-<br>\
-每个女孩，心中都有一只水晶鞋。<br>\
-<br>\
-182<br>\
-<br>\
-13<br>\
-<br>\
-<br>\
-11、千与千寻<br>\
-<br>\
-人生就是一列开往坟墓的列车，路途上会有很多站，很难有人可以自始至终陪着走完。当陪你的人要下车时，即使不舍也该心存感激，然后挥手道别。<br>\
-<br>\
-182<br>\
-<br>\
-103<br>\
-<br>\
-<br>\
-12、哆啦A梦：伴我同行<br>\
-<br>\
-我一直在，守着你的天真和笑容。<br>\
-<br>\
-120<br>\
-<br>\
-813<br>\
-<br>\
-<br>\
-13、冰雪奇缘<br>\
-<br>\
-爱就是把某个人看得比你自己重要。<br>\
-<br>\
-1882<br>\
-<br>\
-137<br>\
-<br>\
-<br>\
-14、左耳<br>\
-<br>\
-医学专家说左耳是靠近心脏最近的地方，甜言蜜语要说给左耳听。<br>\
-<br>\
-162<br>\
-<br>\
-137<br>\
-<br>\
-<br>\
-15、我的男友和狗<br>\
-<br>\
-她不只是宠物，她是我的家人。<br>\
-<br>\
-127<br>\
-<br>\
-163<br>\
-<br>\
-<br>\
-16、神偷奶爸<br>\
-<br>\
-你装过头了 其实内在是一颗破碎的心。<br>\
-<br>\
-126<br>\
-<br>\
-173<br>\
-<br>\
-<br>\
-17、驯龙高手<br>\
-<br>\
-我知道这希望渺茫，但是你不能总是保护他。<br>\
-<br>\
-162<br>\
-<br>\
-163<br>\
-<br>\
-<br>\
-18、奔跑吧！兄弟<br>\
-<br>\
-邓超：We are 伐木累<br>\
-<br>\
-12<br>\
-<br>\
-13<br>\
-<br>\
-<br>\
-19、老男孩猛龙过江<br>\
-<br>\
-成长似乎就是不断发现，那些让自己魂牵梦绕的东西，原来都是一场场幻想，然后一次次从梦里醒过来，而现实从来连一点商量的余地都没有。<br>\
-<br>\
-12<br>\
-<br>\
-13<br>\
-<br>\
-<br>\
-20、当幸福来敲门<br>\
-<br>\
-当人们做不到一些事情的时候，他们就会对你说你也同样不能。<br>\
-<br>\
-12<br>\
-<br>\
-13<br>\
+var dataStr = '仓鼠<br><br>仓鼠1<br><br>我这个人有一个坏习惯<br><br>12<br><br>13<br><br><br>\
+仓鼠<br><br>仓鼠2<br><br>一旦我干了什么蠢事<br><br>11<br><br>121<br><br><br>\
+仓鼠<br><br>仓鼠3<br><br>那个过程会<br><br>15<br><br>4<br><br><br>\
+仓鼠<br><br>仓鼠4<br><br>在我脑子里回放几十遍<br><br>22<br><br>2<br><br><br>\
+仓鼠<br><br>仓鼠5<br><br>一直体会自己的傻逼<br><br>33<br><br>34<br><br><br>\
+仓鼠<br><br>仓鼠6<br><br>可能过了5年10年<br><br>11<br><br>32<br><br><br>\
+仓鼠<br><br>仓鼠7<br><br>甚至到老了<br><br>21<br><br>23<br><br><br>\
+仓鼠<br><br>仓鼠8<br><br>有些记忆深刻的场景<br><br>14<br><br>41<br><br><br>\
+仓鼠<br><br>仓鼠9<br><br>都不会忘<br><br>65<br><br>56<br><br><br>\
+佩服三连<br><br>佩服三连1<br><br>佩服三连<br><br>66<br><br>55<br><br><br>\
+佩服三连<br><br>佩服三连2<br><br>佩服三连<br><br>321<br><br>123<br><br><br>\
+佩服三连<br><br>佩服三连3<br><br>佩服三连<br><br>111<br><br>222<br><br><br>\
+佩服三连<br><br>佩服三连4<br><br>佩服三连<br><br>323<br><br>232<br><br><br>\
+佩服三连<br><br>佩服三连5<br><br>佩服三连<br><br>143<br><br>134<br><br><br>\
+佩服三连<br><br>佩服三连6<br><br>佩服三连<br><br>98<br><br>89<br><br><br>\
+佩服三连<br><br>佩服三连7<br><br>佩服三连<br><br>79<br><br>97<br><br><br>\
+小祖宗<br><br>小祖宗1<br><br>小祖宗<br><br>96<br><br>69<br><br><br>\
+小祖宗<br><br>小祖宗2<br><br>小祖宗<br><br>78<br><br>87<br><br><br>\
+小祖宗<br><br>小祖宗3<br><br>小祖宗<br><br>56<br><br>65<br><br><br>\
+小祖宗<br><br>小祖宗4<br><br>小祖宗<br><br>57<br><br>75<br><br><br>\
+小祖宗<br><br>小祖宗5<br><br>小祖宗<br><br>74<br><br>47<br><br><br>\
+小祖宗<br><br>小祖宗6<br><br>小祖宗<br><br>36<br><br>63<br><br><br>\
+小祖宗<br><br>小祖宗7<br><br>小祖宗<br><br>85<br><br>58<br><br><br>\
+小祖宗<br><br>小祖宗8<br><br>小祖宗<br><br>35<br><br>53<br><br><br>\
+小祖宗<br><br>小祖宗9<br><br>小祖宗<br><br>91<br><br>19<br><br><br>\
+雪碧<br><br>雪碧1<br><br>雪碧<br><br>17<br><br>71<br><br><br>\
+雪碧<br><br>雪碧2<br><br>雪碧<br><br>27<br><br>72<br><br><br>\
+雪碧<br><br>雪碧3<br><br>雪碧<br><br>37<br><br>73<br><br><br>\
+雪碧<br><br>雪碧4<br><br>雪碧<br><br>47<br><br>74<br><br><br>\
+雪碧<br><br>雪碧5<br><br>雪碧<br><br>57<br><br>75<br><br><br>\
+雪碧<br><br>雪碧6<br><br>雪碧<br><br>67<br><br>76<br><br><br>\
+熊本熊<br><br>熊本熊1<br><br>熊本熊<br><br>123<br><br>132<br><br><br>\
+熊本熊<br><br>熊本熊2<br><br>熊本熊<br><br>134<br><br>143<br><br><br>\
+熊本熊<br><br>熊本熊3<br><br>熊本熊<br><br>145<br><br>154<br><br><br>\
+熊本熊<br><br>熊本熊4<br><br>熊本熊<br><br>156<br><br>165<br><br><br>\
+熊本熊<br><br>熊本熊5<br><br>熊本熊<br><br>167<br><br>176<br><br><br>\
+熊本熊<br><br>熊本熊6<br><br>熊本熊<br><br>178<br><br>187<br><br><br>\
+熊本熊<br><br>熊本熊7<br><br>熊本熊<br><br>189<br><br>198<br><br><br>\
+熊本熊<br><br>熊本熊8<br><br>熊本熊<br><br>113<br><br>131<br><br><br>\
+熊本熊<br><br>熊本熊9<br><br>熊本熊<br><br>114<br><br>141<br>\
 ';
 
 //以brbrbr分割成一个数组
@@ -188,11 +50,12 @@ var dataArr=dataStr.split('<br><br><br>');
 for(var i=0;i<dataArr.length;i++){
     var _dataA=dataArr[i].split('<br><br>');
     data.push({
-            caption : _dataA[0].split('、')[1],
-            desc:_dataA[1],
-            img:_dataA[0].split('、').join(' '),
-            collect:_dataA[2],
-            praise:_dataA[3]
+            label : _dataA[0],
+            caption : _dataA[1],
+            desc:_dataA[2],
+            img:_dataA[1],
+            collect:_dataA[3],
+            praise:_dataA[4]
         }
 
     )

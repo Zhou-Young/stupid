@@ -2,7 +2,8 @@
   width: 100%;
   padding-top: 68px;
   padding-bottom: 30px;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)); }
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+  position: relative; }
   .show-pic .pic {
     width: 450px;
     margin: 30px auto;
@@ -39,6 +40,20 @@
       padding-left: 20px;
       line-height: 30px;
       padding-bottom: 20px; }
+  .show-pic .ileft {
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    color: #fff; }
+    .show-pic .ileft i {
+      font-size: 35px; }
+  .show-pic .iright {
+    position: absolute;
+    top: 50%;
+    right: 50px;
+    color: #fff; }
+    .show-pic .iright i {
+      font-size: 35px; }
 
 .album {
   margin: 40px auto 60px auto; }

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>仿堆糖</title>
+    <title>表情多多</title>
     <link rel="stylesheet" href="font/iconfont.css"/>
     <link rel="stylesheet" href="css/common.css"/>
     <link rel="stylesheet" href="css/index.css"/>
@@ -16,11 +16,12 @@
         <a href="index.html" class="logo left"><img src="img/logo.png" alt="logo" /></a>
         <div class="sort left">
             <p>分类<i class="iconfont icon-unfold ml10"></i></p>
-            <ul class="sort-list list">
-                <li>宋民国</li>
-                <li>哈士奇</li>
-                <li>宋民国</li>
-                <li>哈士奇</li>
+            <ul class="sort-list list" id="sortUl">
+                <li>仓鼠</li>
+                <li>佩服三连</li>
+                <li>雪碧</li>
+                <li>熊本熊</li>
+                <li>小祖宗</li>
             </ul>
         </div>
         <div class="search left">
@@ -61,9 +62,12 @@
             <i class="iconfont icon-guanbi right" onclick="hide('login')"></i>
         </div>
         <div class="login-form">
-            <span>昵称:</span><input type="text"/><br/>
-            <span>密码:</span><input type="password"/><br/>
-            <button class="mr10 login-btn" onclick="magic('login','land','user')">登陆</button><button class="cancel" onclick="hide('login')">取消</button>
+            <form action="">
+                <span>昵称:</span><input type="text" required/><br/>
+                <span>密码:</span><input type="password" required/><br/>
+            </form>
+            <button class="mr10 login-btn" onclick="magic('login','land','user')">登陆</button>
+            <button class="cancel" onclick="hide('login')">取消</button>
         </div>
         <div class="other">
             <p>其他登陆方式</p>
@@ -97,12 +101,25 @@
             <p class="left">上传图片</p>
             <i class="iconfont icon-guanbi right" onclick="hide('upload')"></i>
         </div>
-        <section class="upload-box">
+        <section class="upload-box" id="uploadBox">
             <div class="upload-btn">
                 <i class="iconfont icon-upload"></i><span>&nbsp;上传图片</span>
-                <input type="file" name="pic" id="pic" accept="image/*">
+                <input type="file" name="pic" id="pic">
             </div>
             <div class="upload-tip">图片需小于10M；如有来源，请注明</div>
+        </section>
+        <section class="upload-show hidden" id="uploadShow">
+            <div class="left show-img">
+                <img src="" alt="" id="imgShow"/>
+            </div>
+            <div class="show-desc">
+                <p><span>专辑名</span><input type="text" required id="albumName"/></p>
+                <p><span>标签</span><input type="text" required/></p>
+                <p><span>描述</span><textarea rows="3" cols="22" required id="albumDesc"></textarea></p>
+                <a class="upload-btn" href="album-test.html">
+                    <i class="iconfont icon-upload"></i><span>&nbsp;上传</span>
+                </a>
+            </div>
         </section>
     </div>
 </div>
@@ -115,9 +132,9 @@
         </div>
         <div class="album-wrap">
             <section class="album-l">
-                <p><span>专辑名</span><input type="text"/></p>
-                <p><span style="float:left">描述</span><textarea rows="3" cols="22"></textarea></p>
-                <p><span>标签</span><input type="text"/></p>
+                <p><span>专辑名</span><input type="text" required/></p>
+                <p><span style="float:left">描述</span><textarea rows="3" cols="22" required></textarea></p>
+                <p><span>标签</span><input type="text" required/></p>
                 <div class="create" onclick="hide('uploadAlbum')">创建</div>
             </section>
             <section class="album-r">
@@ -158,8 +175,11 @@
             <div class="pic-introduce">
                 <p class="intro">{{desc}}</p>
                 <div class="pic-collect">
-                    <i class="iconfont icon-shoucang1"></i><span>{{collect}}</span>
-                    <i class="iconfont icon-dianzan" onclick=""></i><span>{{praise}}</span>
+                    <span onclick="praise(this)">
+                        <i class="iconfont icon-shoucang1"></i>
+                        <span>{{collect}}</span>
+                    </span>
+                    <span onclick="praise(this)"><i class="iconfont icon-dianzan" onclick=""></i><span>{{praise}}</span></span>
                 </div>
             </div>
         </div>
@@ -174,5 +194,17 @@
 <script src="js/common.js"></script>
 <script src="js/data.js"></script>
 <script src="js/index.js"></script>
+<script>
+    document.getElementById('pic').onchange = function() {
+        var imgFile = this.files[0];
+        var fr = new FileReader();
+        fr.onload = function() {
+            document.getElementById('imgShow').src = fr.result;
+        };
+        fr.readAsDataURL(imgFile);
+        magic("uploadBox","uploadBox","uploadShow");
+        console.log(imgFile,fr);
+    };
+</script>
 </body>
 </html>

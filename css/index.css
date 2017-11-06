@@ -44,6 +44,8 @@
           padding-top: 10px;
           font-size: 12px;
           color: #999999; }
+          .main .pic-content .pic .pic-introduce .pic-collect span {
+            cursor: pointer; }
   .main .page {
     margin: 20px 0 40px 0;
     text-align: center; }

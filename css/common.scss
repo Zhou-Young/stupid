@@ -79,7 +79,7 @@ p{ font-size: 12px;  }
 }
 
 .hidden{
-  display: none;
+  display: none !important;
 }
 
 .list{
@@ -462,6 +462,49 @@ nav{
 }
 
 /* upload album end*/
+
+.upload-show{
+  .show-img{
+    background-color: #ccc;
+    width: 150px;
+    height: 200px;
+    margin: 30px;
+    #imgShow{
+      width: 150px;
+      height: 200px;
+    }
+  }
+  .show-desc{
+    margin-left: 200px;
+    padding-top: 30px;
+    p{
+      text-align: left;
+      margin-bottom: 10px;
+      span{
+        width: 40px;
+        display: inline-block;
+        text-align: right;
+        vertical-align: top;
+        margin-right: 10px;
+        margin-bottom: 10px;
+      }
+      input{
+        width: 150px;
+        height: 25px;
+      }
+      textarea{
+        width: 150px;
+        border: #ccc 1px solid;
+      }
+    }
+    .upload-btn{
+      display: block;
+      margin-left: 70px;
+      margin-top: 45px;
+      width: 100px;
+    }
+  }
+}
 
 footer{
   height: 70px;

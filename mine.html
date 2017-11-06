@@ -13,11 +13,12 @@
         <a href="index.html" class="logo left"><img src="img/logo.png" alt="logo" /></a>
         <div class="sort left">
             <p>分类<i class="iconfont icon-unfold ml10"></i></p>
-            <ul class="sort-list list">
-                <li>宋民国</li>
-                <li>哈士奇</li>
-                <li>宋民国</li>
-                <li>哈士奇</li>
+            <ul class="sort-list list" id="sortUl">
+                <li>仓鼠</li>
+                <li>佩服三连</li>
+                <li>雪碧</li>
+                <li>熊本熊</li>
+                <li>小祖宗</li>
             </ul>
         </div>
         <div class="search left">
@@ -73,18 +74,46 @@
     </div>
 </div>
 
+<div class="sign hidden" id="sign">
+    <div class="content">
+        <div class="nav clearfix">
+            <p class="left">注册</p>
+            <i class="iconfont icon-guanbi right" onclick="hide('sign')"></i>
+        </div>
+        <div action="" class="login-form">
+            <span>昵称:</span><input type="text"/><br/>
+            <span>邮箱:</span><input type="text"/><br/>
+            <span>密码:</span><input type="password"/><br/>
+            <button class="mr10 login-btn" onclick="magic('sign','land','user')">注册并登陆</button><button class="cancel" onclick="hide('sign')">取消</button>
+        </div>
+    </div>
+</div>
+
 <div class="sign hidden" id="upload">
     <div class="content">
         <div class="nav clearfix">
             <p class="left">上传图片</p>
             <i class="iconfont icon-guanbi right" onclick="hide('upload')"></i>
         </div>
-        <section class="upload-box">
+        <section class="upload-box" id="uploadBox">
             <div class="upload-btn">
                 <i class="iconfont icon-upload"></i><span>&nbsp;上传图片</span>
-                <input type="file" name="pic" id="pic" accept="image/*">
+                <input type="file" name="pic" id="pic">
             </div>
             <div class="upload-tip">图片需小于10M；如有来源，请注明</div>
+        </section>
+        <section class="upload-show hidden" id="uploadShow">
+            <div class="left show-img">
+                <img src="" alt="" id="imgShow"/>
+            </div>
+            <div class="show-desc">
+                <p><span>专辑名</span><input type="text" required id="albumName"/></p>
+                <p><span>标签</span><input type="text" required/></p>
+                <p><span>描述</span><textarea rows="3" cols="22" required id="albumDesc"></textarea></p>
+                <a class="upload-btn" href="album-test.html">
+                    <i class="iconfont icon-upload"></i><span>&nbsp;上传</span>
+                </a>
+            </div>
         </section>
     </div>
 </div>
@@ -97,9 +126,9 @@
         </div>
         <div class="album-wrap">
             <section class="album-l">
-                <p><span>专辑名</span><input type="text"/></p>
-                <p><span style="float:left">描述</span><textarea rows="3" cols="22"></textarea></p>
-                <p><span>标签</span><input type="text"/></p>
+                <p><span>专辑名</span><input type="text" required/></p>
+                <p><span style="float:left">描述</span><textarea rows="3" cols="22" required></textarea></p>
+                <p><span>标签</span><input type="text" required/></p>
                 <div class="create" onclick="hide('uploadAlbum')">创建</div>
             </section>
             <section class="album-r">
@@ -129,21 +158,6 @@
     </div>
 </div>
 
-<div class="sign hidden" id="sign">
-    <div class="content">
-        <div class="nav clearfix">
-            <p class="left">登陆</p>
-            <i class="iconfont icon-guanbi right" onclick="hide('login')"></i>
-        </div>
-        <div action="" class="login-form">
-            <span>昵称:</span><input type="text"/><br/>
-            <span>邮箱:</span><input type="text"/><br/>
-            <span>密码:</span><input type="password"/><br/>
-            <button class="mr10 login-btn" onclick="magic('sign','land','user')">注册并登陆</button><button class="cancel" onclick="hide('login')">取消</button>
-        </div>
-    </div>
-</div>
-
 <section class="mine-page main-content">
     <header>
         <div class="header-left left">
@@ -168,43 +182,43 @@
     <section class="main">
 
         <div class="pic-content main-content clearfix show" id="picContent" style="height: auto">
-            <div class="pic left add" id="album_1">
+            <div class="pic left add" id="album_1" onclick="show('uploadAlbum')">
                 <i class="iconfont icon-tianjia"></i>
                 <p>创建专辑</p>
             </div>
             <div class="pic left " id="album_2">
                 <a href="album.html">
-                    <img src="img/2%20栀子花开.jpg" alt="" onclick=""/>
+                    <img src="img/仓鼠1.jpg" alt="" onclick=""/>
                 </a>
                 <div class="pic-introduce">
-                    <p class="intro">专辑名称</p>
+                    <p class="intro">仓鼠</p>
                     <div class="pic-collect">
-                        <i class="iconfont icon-shoucang1"></i><span>6张图片</span>
+                        <i class="iconfont icon-shoucang1"></i><span>9张图片</span>
                         <i class="iconfont icon-dianzan" onclick=""></i><span>22人收藏</span>
                     </div>
                 </div>
             </div>
             <div class="pic left " id="album_3">
-                <a href="album.html">
-                    <img src="img/3%20小时代4.jpg" alt="" onclick=""/>
+                <a href="album2.html">
+                    <img src="img/熊本熊1.jpg" alt="" onclick=""/>
                 </a>
                 <div class="pic-introduce">
-                    <p class="intro">专辑名称</p>
+                    <p class="intro">熊本熊</p>
                     <div class="pic-collect">
-                        <i class="iconfont icon-shoucang1"></i><span>6张图片</span>
-                        <i class="iconfont icon-dianzan" onclick=""></i><span>22人收藏</span>
+                        <i class="iconfont icon-shoucang1"></i><span>9张图片</span>
+                        <i class="iconfont icon-dianzan" onclick=""></i><span>76人收藏</span>
                     </div>
                 </div>
             </div>
             <div class="pic left " id="album_4">
-                <a href="album.html">
-                    <img src="img/4%20中国合伙人.jpg" alt="" onclick=""/>
+                <a href="album3.html">
+                    <img src="img/佩服三连1.jpg" alt="" onclick=""/>
                 </a>
                 <div class="pic-introduce">
-                    <p class="intro">专辑名称</p>
+                    <p class="intro">佩服三连</p>
                     <div class="pic-collect">
-                        <i class="iconfont icon-shoucang1"></i><span>6张图片</span>
-                        <i class="iconfont icon-dianzan" onclick=""></i><span>22人收藏</span>
+                        <i class="iconfont icon-shoucang1"></i><span>7张图片</span>
+                        <i class="iconfont icon-dianzan" onclick=""></i><span>123人收藏</span>
                     </div>
                 </div>
             </div>
@@ -212,7 +226,7 @@
         <ul class="collect clearfix hidden" id="collect">
             <div class="pic left ">
                 <a href="album.html">
-                    <img src="img/2%20栀子花开.jpg" alt="" onclick=""/>
+                    <img src="img/雪碧1.jpg" alt="" onclick=""/>
                 </a>
                 <div class="pic-introduce">
                     <p class="intro">收藏专辑</p>
@@ -224,7 +238,7 @@
             </div>
             <div class="pic left ">
                 <a href="album.html">
-                    <img src="img/3%20小时代4.jpg" alt="" onclick=""/>
+                    <img src="img/雪碧3.jpg" alt="" onclick=""/>
                 </a>
                 <div class="pic-introduce">
                     <p class="intro">收藏专辑</p>
@@ -236,7 +250,7 @@
             </div>
             <div class="pic left ">
                 <a href="album.html">
-                    <img src="img/4%20中国合伙人.jpg" alt="" onclick=""/>
+                    <img src="img/雪碧2.jpg" alt="" onclick=""/>
                 </a>
                 <div class="pic-introduce">
                     <p class="intro">收藏专辑</p>
@@ -245,9 +259,10 @@
                         <i class="iconfont icon-dianzan" onclick=""></i><span>22人收藏</span>
                     </div>
                 </div>
-            </div><div class="pic left ">
+            </div>
+            <div class="pic left ">
             <a href="album.html">
-                <img src="img/2%20栀子花开.jpg" alt="" onclick=""/>
+                <img src="img/小祖宗1.jpg" alt="" onclick=""/>
             </a>
             <div class="pic-introduce">
                 <p class="intro">收藏专辑</p>
@@ -259,7 +274,7 @@
         </div>
             <div class="pic left ">
                 <a href="album.html">
-                    <img src="img/3%20小时代4.jpg" alt="" onclick=""/>
+                    <img src="img/仓鼠4.jpg" alt="" onclick=""/>
                 </a>
                 <div class="pic-introduce">
                     <p class="intro">收藏专辑</p>
@@ -271,43 +286,7 @@
             </div>
             <div class="pic left ">
                 <a href="album.html">
-                    <img src="img/4%20中国合伙人.jpg" alt="" onclick=""/>
-                </a>
-                <div class="pic-introduce">
-                    <p class="intro">收藏专辑</p>
-                    <div class="pic-collect">
-                        <i class="iconfont icon-shoucang1"></i><span>6张图片</span>
-                        <i class="iconfont icon-dianzan" onclick=""></i><span>22人收藏</span>
-                    </div>
-                </div>
-            </div>
-            <div class="pic left ">
-                <a href="album.html">
-                    <img src="img/2%20栀子花开.jpg" alt="" onclick=""/>
-                </a>
-                <div class="pic-introduce">
-                    <p class="intro">专辑名称</p>
-                    <div class="pic-collect">
-                        <i class="iconfont icon-shoucang1"></i><span>6张图片</span>
-                        <i class="iconfont icon-dianzan" onclick=""></i><span>22人收藏</span>
-                    </div>
-                </div>
-            </div>
-            <div class="pic left ">
-                <a href="album.html">
-                    <img src="img/3%20小时代4.jpg" alt="" onclick=""/>
-                </a>
-                <div class="pic-introduce">
-                    <p class="intro">收藏专辑</p>
-                    <div class="pic-collect">
-                        <i class="iconfont icon-shoucang1"></i><span>6张图片</span>
-                        <i class="iconfont icon-dianzan" onclick=""></i><span>22人收藏</span>
-                    </div>
-                </div>
-            </div>
-            <div class="pic left ">
-                <a href="album.html">
-                    <img src="img/4%20中国合伙人.jpg" alt="" onclick=""/>
+                    <img src="img/佩服三连4.jpg" alt="" onclick=""/>
                 </a>
                 <div class="pic-introduce">
                     <p class="intro">收藏专辑</p>
