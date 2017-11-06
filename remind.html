@@ -131,28 +131,7 @@
         }
     </style>
 
-    <script type="text/javascript">
-        // JS实现选项卡切换
-        window.onload = function () {
-            var dWrap = document.getElementById("detail-wrap");
-            var li = document.getElementsByClassName("js-selected");
-            var div = dWrap.getElementsByTagName("section");
-            var selected = document.getElementsByClassName("point");
 
-            for (var i = 0; i < li.length; i++) { //获取所有i编号的元素
-                li[i].index = i; //定义一个index属性对li进行编号
-                li[i].onclick = function () { //再注册一个点击事件，当点击的时候所有标签都恢复最初状态
-                    for (var n = 0; n < li.length; n++) { //这步是相对于未被点击部分的样式
-
-                        selected[n].className = "point";
-                        div[n].className = "hide";
-                    }
-                    selected[this.index].className = selected[this.index].className + " on"; //再对点击事件添加相应的属性
-                    div[this.index].className = ""; //通过之前的index编号绑定的指定div
-                }
-            }
-        }
-    </script>
 </head>
 
 <body>
@@ -277,7 +256,7 @@
                 <p><span>专辑名</span><input type="text" required/></p>
                 <p><span style="float:left">描述</span><textarea rows="3" cols="22" required></textarea></p>
                 <p><span>标签</span><input type="text" required/></p>
-                <div class="create" onclick="hide('uploadAlbum')">创建</div>
+                <a class="create" href="album.html">创建</a>
             </section>
             <section class="album-r">
                 <h5>常用标签</h5>
@@ -393,74 +372,96 @@
             </div>
 
 
-        </section>
-        <section class="hide">
-            <div class="one-item">
-                <div class="item-l">
-                    <img src="img/tx3.jpg" alt="logo" class="item-img" />
+            </section>
+            <section class="hide">
+                <div class="one-item">
+                    <div class="item-l">
+                        <img src="img/tx3.jpg" alt="logo" class="item-img" />
+                    </div>
+                    <div class="item-r">
+                        <div class="item-user">XXX</div>
+                        <div class="item-content">收藏 了你的表情包 苏格兰折耳猫</div>
+                    </div>
                 </div>
-                <div class="item-r">
-                    <div class="item-user">XXX</div>
-                    <div class="item-content">收藏 了你的表情包 苏格兰折耳猫</div>
+                <div class="one-item">
+                    <div class="item-l">
+                        <img src="img/tx1.jpg" alt="logo" class="item-img" />
+                    </div>
+                    <div class="item-r">
+                        <div class="item-user">指尖微凉</div>
+                        <div class="item-content">收藏 了你的表情包 苏格兰折耳猫</div>
+                    </div>
                 </div>
-            </div>
-            <div class="one-item">
-                <div class="item-l">
-                    <img src="img/tx1.jpg" alt="logo" class="item-img" />
+            </section>
+            <section class="hide">
+                <div class="one-item">
+                    <div class="item-l">
+                        <img src="img/tx2.jpg" alt="logo" class="item-img" />
+                    </div>
+                    <div class="item-r">
+                        <div class="item-user">大漠孤狼</div>
+                        <div class="item-content">赞 了你的表情包 苏格兰折耳猫</div>
+                    </div>
                 </div>
-                <div class="item-r">
-                    <div class="item-user">指尖微凉</div>
-                    <div class="item-content">收藏 了你的表情包 苏格兰折耳猫</div>
+                <div class="one-item">
+                    <div class="item-l">
+                        <img src="img/tx.jpg" alt="logo" class="item-img" />
+                    </div>
+                    <div class="item-r">
+                        <div class="item-user">指尖微凉</div>
+                        <div class="item-content">赞 了你的表情包 苏格兰折耳猫</div>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section class="hide">
-            <div class="one-item">
-                <div class="item-l">
-                    <img src="img/tx2.jpg" alt="logo" class="item-img" />
+            </section>
+            <section class="hide">
+                <div class="one-item">
+                    <div class="item-l">
+                        <img src="img/tx2.jpg" alt="logo" class="item-img" />
+                    </div>
+                    <div class="item-r">
+                        <div class="item-user">XXX</div>
+                        <div class="item-content">评论 了你的表情包 苏格兰折耳猫 的图片</div>
+                    </div>
                 </div>
-                <div class="item-r">
-                    <div class="item-user">大漠孤狼</div>
-                    <div class="item-content">赞 了你的表情包 苏格兰折耳猫</div>
+                <div class="one-item">
+                    <div class="item-l">
+                        <img src="img/tx.jpg" alt="logo" class="item-img" />
+                    </div>
+                    <div class="item-r">
+                        <div class="item-user">大漠孤狼</div>
+                        <div class="item-content">评论 了你的表情包 苏格兰折耳猫 的图片</div>
+                    </div>
                 </div>
-            </div>
-            <div class="one-item">
-                <div class="item-l">
-                    <img src="img/tx.jpg" alt="logo" class="item-img" />
-                </div>
-                <div class="item-r">
-                    <div class="item-user">指尖微凉</div>
-                    <div class="item-content">赞 了你的表情包 苏格兰折耳猫</div>
-                </div>
-            </div>
-        </section>
-        <section class="hide">
-            <div class="one-item">
-                <div class="item-l">
-                    <img src="img/tx2.jpg" alt="logo" class="item-img" />
-                </div>
-                <div class="item-r">
-                    <div class="item-user">XXX</div>
-                    <div class="item-content">评论 了你的表情包 苏格兰折耳猫 的图片</div>
-                </div>
-            </div>
-            <div class="one-item">
-                <div class="item-l">
-                    <img src="img/tx.jpg" alt="logo" class="item-img" />
-                </div>
-                <div class="item-r">
-                    <div class="item-user">大漠孤狼</div>
-                    <div class="item-content">评论 了你的表情包 苏格兰折耳猫 的图片</div>
-                </div>
-            </div>
-        </section>
-    </div>
+            </section>
+        </div>
 </div>
 
 <footer>
     <p>2017@周扬,徐佩，王玉芳，胡都</p>
 </footer>
 <script src="js/common.js"></script>
+<script type="text/javascript">
+    // JS实现选项卡切换
+    window.onload = function () {
+        var dWrap = document.getElementById("detail-wrap");
+        var li = document.getElementsByClassName("js-selected");
+        var div = dWrap.getElementsByTagName("section");
+        var selected = document.getElementsByClassName("point");
+
+        for (var i = 0; i < li.length; i++) { //获取所有i编号的元素
+            li[i].index = i; //定义一个index属性对li进行编号
+            li[i].onclick = function () { //再注册一个点击事件，当点击的时候所有标签都恢复最初状态
+                for (var n = 0; n < li.length; n++) { //这步是相对于未被点击部分的样式
+
+                    selected[n].className = "point";
+                    div[n].className = "hide";
+                }
+                selected[this.index].className = selected[this.index].className + " on"; //再对点击事件添加相应的属性
+                div[this.index].className = ""; //通过之前的index编号绑定的指定div
+            }
+        }
+    }
+</script>
 </body>
 
 </html>
