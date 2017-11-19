@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>表情多多</title>
+    <title></title>
     <link rel="stylesheet" href="font/iconfont.css"/>
     <link rel="stylesheet" href="css/common.css"/>
-    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/jiade.css"/>
 </head>
 <body>
-<div class="hidden" id="stupidPreLoad">
-    <!--<img src="img/logo.png" alt=""/>-->
-</div>
 <nav>
     <div class="main-content clearfix">
         <a href="index.html" class="logo left"><img src="img/logo.png" alt="logo" /></a>
@@ -62,12 +60,9 @@
             <i class="iconfont icon-guanbi right" onclick="hide('login')"></i>
         </div>
         <div class="login-form">
-            <form action="">
-                <span>昵称:</span><input type="text" required/><br/>
-                <span>密码:</span><input type="password" required/><br/>
-            </form>
-            <button class="mr10 login-btn" onclick="magic('login','land','user')">登陆</button>
-            <button class="cancel" onclick="hide('login')">取消</button>
+            <span>昵称:</span><input type="text"/><br/>
+            <span>密码:</span><input type="password"/><br/>
+            <button class="mr10 login-btn" onclick="magic('login','land','user')">登陆</button><button class="cancel" onclick="hide('login')">取消</button>
         </div>
         <div class="other">
             <p>其他登陆方式</p>
@@ -101,7 +96,7 @@
             <p class="left">上传图片</p>
             <i class="iconfont icon-guanbi right" onclick="hide('upload')"></i>
         </div>
-        <section class="upload-box" id="uploadBox">
+        <section class="upload-box show" id="uploadBox">
             <div class="upload-btn">
                 <i class="iconfont icon-upload"></i><span>&nbsp;上传图片</span>
                 <input type="file" name="pic" id="pic">
@@ -113,10 +108,10 @@
                 <img src="" alt="" id="imgShow"/>
             </div>
             <div class="show-desc">
-                <p><span>专辑名</span><input type="text" required id="albumName"/></p>
-                <p><span>标签</span><input type="text" required/></p>
+                <p><span>图片名</span><input type="text" required id="albumName"/></p>
+                <p><span>标签</span><input type="text" required id="albumLabel"/></p>
                 <p><span>描述</span><textarea rows="3" cols="22" required id="albumDesc"></textarea></p>
-                <a class="upload-btn" href="album-test.html">
+                <a class="upload-btn" id="uploadPic">
                     <i class="iconfont icon-upload"></i><span>&nbsp;上传</span>
                 </a>
             </div>
@@ -135,7 +130,8 @@
                 <p><span>专辑名</span><input type="text" required/></p>
                 <p><span style="float:left">描述</span><textarea rows="3" cols="22" required></textarea></p>
                 <p><span>标签</span><input type="text" required/></p>
-                <a class="create" href="jiade.html">创建</a>
+                <a class="create" href="album-test.html">创建</a>
+
             </section>
             <section class="album-r">
                 <h5>常用标签</h5>
@@ -164,37 +160,56 @@
     </div>
 </div>
 
+<section class="album-page main-content">
+    <header>
+        <h1>
+            熊本熊
+        </h1>
+        <span id="tupian">0张图片</span><span>0人收藏</span>
+        <div class="desc">
+            <p class="name left"><img src="img/pic.jpg" alt=""/>饭饭特稀</p>
+            <span class="bp collect" onclick="show('upload')"><i class="iconfont icon-new"></i>发布</span>
+            <span class="bp trans"><i class="iconfont icon-demo16"></i></span>
 
-<section class="main">
-    <div class="choose main-content"><a onclick="sortC()">按热度</a>/<a onclick="sortP()">按时间</a></div>
-    <div class="pic-content main-content clearfix" id="picContent" style="height: auto">
-        <div class="pic left " id="pic_{{index}}">
-            <a href="detailpage.html?id={{index}}">
-                <img src="img/{{img}}" alt="" onclick="jump()"/>
-            </a>
-            <div class="pic-introduce">
-                <p class="intro">{{desc}}</p>
-                <div class="pic-collect">
-                    <span onclick="praise(this)">
-                        <i class="iconfont icon-shoucang1"></i>
-                        <span>{{collect}}</span>
-                    </span>
-                    <span onclick="praise(this)"><i class="iconfont icon-dianzan" onclick=""></i><span>{{praise}}</span></span>
+
+        </div>
+    </header>
+
+    <section class="main">
+        <div class="pic-content main-content clearfix" id="picContent" style="height: auto">
+            <div class="pic left add" id="album_1" onclick="show('upload')">
+                <i class="iconfont icon-tianjia"></i>
+                <p>上传图片</p>
+            </div>
+            <div id="wrap" class="hidden">
+                <div class="pic left">
+                    <a href="detailpage.html?id={{index}}">
+                        <img src="{{img}}" alt="" onclick="jump()"/>
+                    </a>
+                    <div class="pic-introduce">
+                        <p class="intro">{{desc}}</p>
+                        <div class="pic-collect">
+                            <i class="iconfont icon-shoucang1"></i><span>0</span>
+                            <i class="iconfont icon-dianzan" onclick=""></i><span>0</span>
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </div>
-    </div>
-    <ul class="page" id="page">
-    </ul>
+        <ul class="page" id="page">
+        </ul>
+    </section>
+
 </section>
+
 <footer>
     <p>2017@周扬,徐佩，王玉芳，胡都</p>
 </footer>
-
-<script src="js/common.js"></script>
 <script src="js/data.js"></script>
-<script src="js/index.js"></script>
+<script src="js/common.js"></script>
 <script>
+
     document.getElementById('pic').onchange = function() {
         var imgFile = this.files[0];
         var fr = new FileReader();
@@ -202,9 +217,109 @@
             document.getElementById('imgShow').src = fr.result;
         };
         fr.readAsDataURL(imgFile);
+        imgSrc=fr.result;
         magic("uploadBox","uploadBox","uploadShow");
-        console.log(imgFile,fr);
     };
+    var wrap=g('#wrap').innerHTML;
+    document.getElementById('uploadPic').onclick = function() {
+        var imgSrc = document.getElementById('imgShow').src;
+
+        var albumDesc = document.getElementById('albumDesc').value;
+        console.log(imgSrc,wrap,albumDesc);
+        magic("uploadShow","uploadShow","uploadBox");
+
+        hide('upload');
+        var picContent=g('#picContent').innerHTML;
+        var _html=wrap
+                    .replace('{{img}}',imgSrc)
+                    .replace('{{desc}}',albumDesc);
+        g('#picContent').innerHTML = picContent + _html;
+
+    };
+
+
+//    var picHtml=g('#picContent').innerHTML;
+//
+
+    //显示图片列表
+//    function putPic(data){
+//        var mainhtml=[];
+//        for(var i=31;i<40;i++){
+//            var _html=picHtml
+//                    .replace(/{{index}}/g,i)
+//                    .replace('{{img}}',data[i].img+'.jpg')
+//                    .replace('{{desc}}',data[i].desc)
+//                    .replace('{{collect}}',data[i].collect)
+//                    .replace('{{praise}}',data[i].praise);
+//            mainhtml.push(_html);
+//        }
+//        g('#picContent').innerHTML= mainhtml.join(' ');
+//        console.log(g('#picContent').innerHTML);
+//        window.onload=function(){
+//            waterFall('#picContent','pic');
+//        }
+//
+//    }
+//    putPic(data);
+
+
+    //实现瀑布流布局
+    //规则:从第二行开始的图片,总是拼接在上一行高度最矮的图片后面
+    function  waterFall(parent,box) {
+        //父盒子居中
+        //通过父盒子拿到所有的子盒子
+        var allBox = g(parent).getElementsByClassName(box);
+
+        var boxWidth = 224;
+        var cols = 5;
+
+        //子盒子定位
+        //创建一个高度数组,存所有的高度
+        var heightArr = [];
+        var maxHeight;
+        //遍历
+        for(var i = 0; i < allBox.length ;i++)
+        {
+            //求出每个盒子的高度
+            var boxHeight = allBox[i].offsetHeight + 20;
+            console.log(boxHeight);
+            //第一行的盒子不需要重新定位//每一行的盒子数与列数相同
+            if(i<cols)
+            {
+                //添加第一行所有盒子高度
+                heightArr.push(boxHeight);
+            }
+            else//剩下的盒子都需要瀑布流布局
+            {
+                //求出最矮的盒子高度
+                var minBoxHeight = Math.min.apply(this,heightArr);
+                //求出最矮盒子对应的索引
+                var minBoxIndex = getMinBoxIndex(minBoxHeight,heightArr);
+                //盒子瀑布流定位  顶部间距就是最矮盒子的高度
+                allBox[i].style.position = 'absolute';
+                allBox[i].style.top = minBoxHeight +  'px';
+                allBox[i].style.left = minBoxIndex * (boxWidth + 20) +'px';
+                //关键:更新数组最矮高度,使下一个图片在高度数组中总是找最矮高度的图片下面拼接
+                heightArr[minBoxIndex] += boxHeight;
+
+            }
+        }
+        maxHeight=Math.max.apply(this,heightArr);
+        g(parent).style.height=maxHeight + "px";
+    }
+
+    //求出最矮盒子对应的索引函数
+    function getMinBoxIndex(val,arr) {
+        for(var i in arr)
+        {
+            if(val == arr[i])
+            {
+                return i;
+            }
+        }
+    }
+
 </script>
 </body>
 </html>
+
