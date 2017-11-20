@@ -4,7 +4,6 @@
   var url=location.search;
 
 var detailIndex = url.split('=')[1];
-console.log(detailIndex);
 
 //公用函数--获取节点
 function g(elem){

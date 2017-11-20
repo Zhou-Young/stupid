@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="font/iconfont.css"/>
     <link rel="stylesheet" href="css/common.css"/>
-    <link rel="stylesheet" href="css/jiade.css"/>
+    <link rel="stylesheet" href="css/mine.css"/>
+    <style type="text/css">
+        .mine-page header{
+            background: url("./img/iiimg.jpg");
+        }
+        .edit{
+            background-color: #ff807d !important;
+        }
+    </style>
 </head>
 <body>
 <nav>
@@ -96,7 +103,7 @@
             <p class="left">上传图片</p>
             <i class="iconfont icon-guanbi right" onclick="hide('upload')"></i>
         </div>
-        <section class="upload-box show" id="uploadBox">
+        <section class="upload-box" id="uploadBox">
             <div class="upload-btn">
                 <i class="iconfont icon-upload"></i><span>&nbsp;上传图片</span>
                 <input type="file" name="pic" id="pic">
@@ -108,10 +115,10 @@
                 <img src="" alt="" id="imgShow"/>
             </div>
             <div class="show-desc">
-                <p><span>图片名</span><input type="text" required id="albumName"/></p>
-                <p><span>标签</span><input type="text" required id="albumLabel"/></p>
+                <p><span>专辑名</span><input type="text" required id="albumName"/></p>
+                <p><span>标签</span><input type="text" required/></p>
                 <p><span>描述</span><textarea rows="3" cols="22" required id="albumDesc"></textarea></p>
-                <a class="upload-btn" id="uploadPic">
+                <a class="upload-btn" href="album-test.html">
                     <i class="iconfont icon-upload"></i><span>&nbsp;上传</span>
                 </a>
             </div>
@@ -130,8 +137,7 @@
                 <p><span>专辑名</span><input type="text" required/></p>
                 <p><span style="float:left">描述</span><textarea rows="3" cols="22" required></textarea></p>
                 <p><span>标签</span><input type="text" required/></p>
-                <a class="create" href="album-test.html">创建</a>
-
+                <a class="create" href="album.html">创建</a>
             </section>
             <section class="album-r">
                 <h5>常用标签</h5>
@@ -160,44 +166,140 @@
     </div>
 </div>
 
-<section class="album-page main-content">
+<section class="mine-page main-content">
     <header>
-        <h1 id="name">
-            熊本熊
-        </h1>
-        <span id="tupian">0张图片</span><span>0人收藏</span>
-        <div class="desc">
-            <p class="name left"><img src="img/pic.jpg" alt=""/>饭饭特稀</p>
-            <span class="bp collect" onclick="show('upload')"><i class="iconfont icon-new"></i>发布</span>
-            <span class="bp trans"><i class="iconfont icon-demo16"></i></span>
-
+        <div class="header-left left">
+            <img src="img/tx2.jpg" alt=""/>
+            <p class="name">wuli大萌佩</p>
+            <span>关注 20</span> <span>粉丝 0</span><br/>
+            <a class="edit"><i class="iconfont icon-new mr10"></i>关注</a>
+        </div>
+        <div class="header-right">
 
         </div>
+        <div class="header-bottom">
+            <ul>
+                <li class="now" onclick="magic('collect','collect','picContent')">专辑</li>
+                <li onclick="magic('picContent','picContent','collect')">收藏</li>
+                <div class="line"></div>
+            </ul>
+        </div>
+
     </header>
 
     <section class="main">
-        <div class="pic-content main-content clearfix" id="picContent" style="height: auto">
-            <div class="pic left add" id="album_1" onclick="show('upload')">
-                <i class="iconfont icon-tianjia"></i>
-                <p>上传图片</p>
-            </div>
-            <div id="wrap" class="hidden">
-                <div class="pic left">
-                    <a href="detailpage.html?id={{index}}">
-                        <img src="{{img}}" alt="" onclick="jump()"/>
-                    </a>
-                    <div class="pic-introduce">
-                        <p class="intro">{{desc}}</p>
-                        <div class="pic-collect">
-                            <i class="iconfont icon-shoucang1"></i><span>0</span>
-                            <i class="iconfont icon-dianzan" onclick=""></i><span>0</span>
-                        </div>
+
+        <div class="pic-content main-content clearfix show" id="picContent" style="height: auto">
+            <div class="pic left " id="album_3">
+                <a href="album2.html">
+                    <img src="img/熊本熊1.jpg" alt="" onclick=""/>
+                </a>
+                <div class="pic-introduce">
+                    <p class="intro">熊本熊</p>
+                    <div class="pic-collect">
+                        <i class="iconfont icon-shoucang1"></i><span>9张图片</span>
+                        <i class="iconfont icon-dianzan" onclick=""></i><span>76人收藏</span>
                     </div>
                 </div>
             </div>
-
+            <div class="pic left " id="album_2">
+                <a href="album.html">
+                    <img src="img/仓鼠1.jpg" alt="" onclick=""/>
+                </a>
+                <div class="pic-introduce">
+                    <p class="intro">仓鼠</p>
+                    <div class="pic-collect">
+                        <i class="iconfont icon-shoucang1"></i><span>9张图片</span>
+                        <i class="iconfont icon-dianzan" onclick=""></i><span>22人收藏</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pic left " id="album_4">
+                <a href="album3.html">
+                    <img src="img/佩服三连1.jpg" alt="" onclick=""/>
+                </a>
+                <div class="pic-introduce">
+                    <p class="intro">佩服三连</p>
+                    <div class="pic-collect">
+                        <i class="iconfont icon-shoucang1"></i><span>7张图片</span>
+                        <i class="iconfont icon-dianzan" onclick=""></i><span>123人收藏</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <ul class="page" id="page">
+        <ul class="collect clearfix hidden" id="collect">
+            <div class="pic left ">
+                <a href="album.html">
+                    <img src="img/雪碧1.jpg" alt="" onclick=""/>
+                </a>
+                <div class="pic-introduce">
+                    <p class="intro">收藏专辑</p>
+                    <div class="pic-collect">
+                        <i class="iconfont icon-shoucang1"></i><span>6张图片</span>
+                        <i class="iconfont icon-dianzan" onclick=""></i><span>22人收藏</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pic left ">
+                <a href="album.html">
+                    <img src="img/雪碧3.jpg" alt="" onclick=""/>
+                </a>
+                <div class="pic-introduce">
+                    <p class="intro">收藏专辑</p>
+                    <div class="pic-collect">
+                        <i class="iconfont icon-shoucang1"></i><span>6张图片</span>
+                        <i class="iconfont icon-dianzan" onclick=""></i><span>22人收藏</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pic left ">
+                <a href="album.html">
+                    <img src="img/雪碧2.jpg" alt="" onclick=""/>
+                </a>
+                <div class="pic-introduce">
+                    <p class="intro">收藏专辑</p>
+                    <div class="pic-collect">
+                        <i class="iconfont icon-shoucang1"></i><span>6张图片</span>
+                        <i class="iconfont icon-dianzan" onclick=""></i><span>22人收藏</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pic left ">
+                <a href="album.html">
+                    <img src="img/小祖宗1.jpg" alt="" onclick=""/>
+                </a>
+                <div class="pic-introduce">
+                    <p class="intro">收藏专辑</p>
+                    <div class="pic-collect">
+                        <i class="iconfont icon-shoucang1"></i><span>6张图片</span>
+                        <i class="iconfont icon-dianzan" onclick=""></i><span>22人收藏</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pic left ">
+                <a href="album.html">
+                    <img src="img/仓鼠4.jpg" alt="" onclick=""/>
+                </a>
+                <div class="pic-introduce">
+                    <p class="intro">收藏专辑</p>
+                    <div class="pic-collect">
+                        <i class="iconfont icon-shoucang1"></i><span>6张图片</span>
+                        <i class="iconfont icon-dianzan" onclick=""></i><span>22人收藏</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pic left ">
+                <a href="album.html">
+                    <img src="img/佩服三连4.jpg" alt="" onclick=""/>
+                </a>
+                <div class="pic-introduce">
+                    <p class="intro">收藏专辑</p>
+                    <div class="pic-collect">
+                        <i class="iconfont icon-shoucang1"></i><span>6张图片</span>
+                        <i class="iconfont icon-dianzan" onclick=""></i><span>22人收藏</span>
+                    </div>
+                </div>
+            </div>
         </ul>
     </section>
 
@@ -209,63 +311,28 @@
 <script src="js/data.js"></script>
 <script src="js/common.js"></script>
 <script>
-
-    document.getElementById('pic').onchange = function() {
-        var imgFile = this.files[0];
-        var fr = new FileReader();
-        fr.onload = function() {
-            document.getElementById('imgShow').src = fr.result;
-        };
-        fr.readAsDataURL(imgFile);
-        imgSrc=fr.result;
-        magic("uploadBox","uploadBox","uploadShow");
-    };
-    var wrap=g('#wrap').innerHTML;
-    document.getElementById('uploadPic').onclick = function() {
-        var imgSrc = document.getElementById('imgShow').src;
-
-        var albumDesc = document.getElementById('albumDesc').value;
-        console.log(imgSrc,wrap,albumDesc);
-        magic("uploadShow","uploadShow","uploadBox");
-        document.getElementById('albumDesc').value = '';
-        hide('upload');
-        var picContent=g('#picContent').innerHTML;
-        var _html=wrap
-                    .replace('{{img}}',imgSrc)
-                    .replace('{{desc}}',albumDesc);
-        g('#picContent').innerHTML = picContent + _html;
-
-    };
-
-    var url=location.search;
-    var detailIndex = url.split('=')[1];
-    console.log(detailIndex);
-    document.getElementById('name').innerText = detailIndex;
-
-
-    //    var picHtml=g('#picContent').innerHTML;
-//
+    var picHtml=g('#picContent').innerHTML;
 
     //显示图片列表
-//    function putPic(data){
-//        var mainhtml=[];
-//        for(var i=31;i<40;i++){
-//            var _html=picHtml
-//                    .replace(/{{index}}/g,i)
-//                    .replace('{{img}}',data[i].img+'.jpg')
-//                    .replace('{{desc}}',data[i].desc)
-//                    .replace('{{collect}}',data[i].collect)
-//                    .replace('{{praise}}',data[i].praise);
-//            mainhtml.push(_html);
-//        }
-//        g('#picContent').innerHTML= mainhtml.join(' ');
-//        console.log(g('#picContent').innerHTML);
-//        window.onload=function(){
-//            waterFall('#picContent','pic');
-//        }
-//
-//    }
-//    putPic(data);
+    function putPic(data){
+        var mainhtml=[];
+        for(var i=0;i<data.length;i++){
+            var _html=picHtml
+                    .replace(/{{index}}/g,i)
+                    .replace('{{img}}',data[i].img+'.jpg')
+                    .replace('{{desc}}',data[i].desc)
+                    .replace('{{collect}}',data[i].collect)
+                    .replace('{{praise}}',data[i].praise);
+            mainhtml.push(_html);
+        }
+        g('#picContent').innerHTML= mainhtml.join(' ');
+        console.log(g('#picContent').innerHTML);
+        window.onload=function(){
+            waterFall('#picContent','pic');
+        }
+
+    }
+    //    putPic(data);
 
 
     //实现瀑布流布局
@@ -323,8 +390,24 @@
             }
         }
     }
+    function show(classN){
+        var _classN = g("#"+classN).className.split(' ');
+        _classN[_classN.length-1] = 'show';
+        g("#"+classN).className = _classN.join(' ');
+    }
+
+    function hide(classN){
+        var _classN = g("#"+classN).className.split(' ');
+        _classN[_classN.length-1] = 'hidden';
+        g("#"+classN).className = _classN.join(' ');
+    }
+
+    function magic(hide1,hide2,mshow){
+        hide(hide1);
+        hide(hide2);
+        show(mshow);
+    }
 
 </script>
 </body>
 </html>
-

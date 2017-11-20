@@ -132,10 +132,10 @@
         </div>
         <div class="album-wrap">
             <section class="album-l">
-                <p><span>专辑名</span><input type="text" required/></p>
+                <p><span>专辑名</span><input type="text" required id="albumName1"/></p>
                 <p><span style="float:left">描述</span><textarea rows="3" cols="22" required></textarea></p>
-                <p><span>标签</span><input type="text" required/></p>
-                <a class="create" href="jiade.html">创建</a>
+                <p><span>标签</span><input type="text" required  id="albumDesc1"/></p>
+                <a class="create" href="jiade.html" id="toHref">创建</a>
             </section>
             <section class="album-r">
                 <h5>常用标签</h5>
@@ -204,6 +204,10 @@
         fr.readAsDataURL(imgFile);
         magic("uploadBox","uploadBox","uploadShow");
         console.log(imgFile,fr);
+    };
+    document.getElementById('toHref').onclick = function() {
+        var name = document.getElementById('albumName1').value;
+        document.getElementById('toHref').href = 'jiade.html?id='+name;
     };
 </script>
 </body>
